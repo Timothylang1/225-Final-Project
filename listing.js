@@ -1,6 +1,7 @@
-const pictures = ["images/basket.jpg", "images/shampoo.jpg", "images/water bottle.jpg"];
+const pictures = ["images/basket.jpg", "images/shampoo.jpg", "images/water bottle.jpg", "images/basket.jpg", "images/basket.jpg"];
 const image_width = 300;
 const image_height = 300;
+const column_max = 1;
 
 function resize(width, height) {
     // Takes in width and height, and returns new width, height, starting x, starting y to fit within the set width and height, but maintain image original ratio for dimensions
@@ -19,11 +20,14 @@ function resize(width, height) {
     return [canvas_x, canvas_y, width, height];
 }
 
-function createImage(imageName) {
+function createImage(imageNum) {
     // Takes in path to image, and creates image on canvas
-    // Create div 
+    // Create div
+    var imageName = pictures[imageNum];
     var div = document.createElement("div"); // var element keeps declared variables within the scope of just this function
-    // div.style.gridColumn = "1" Used to grid items
+    div.className = "item"; // Uses CSS folder to determine div styling
+
+    document.getElementById("main").appendChild(div); // Adds div into grid which takes care of placement
     
     // Create canvas
     var canvas = document.createElement("canvas");
@@ -45,10 +49,10 @@ function createImage(imageName) {
     var text = document.createTextNode(imageName.substring(7, imageName.length - 4)); // Parse name of item from address of image
     paragraph.appendChild(text)
     div.appendChild(paragraph);
-
-    document.getElementById("main").appendChild(div);
 }
 
-for (img in pictures) { // Returns iterator (e.g. img = 0, 1, 2...)
-    createImage(pictures[img]);
+
+// Returns iterator (e.g. img = 0, 1, 2...)
+for (img in pictures) {
+    createImage(img);
 }
