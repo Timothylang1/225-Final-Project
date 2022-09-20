@@ -7,23 +7,39 @@
             Example Website
         </title>
         <meta charset="utf-8"> <!-- IMPORTANT TO ADD THIS LINE -->
-        <meta name="viewport" content="width=device-width, inital-scale=1.0"> <!-- allows website to be displayed correctly on mobile devices -->
+        <meta name="viewport" content="width=device-width, inital-scale=1"> <!-- allows website to be displayed correctly on mobile devices -->
         <meta name="author" content="Timothy Lang">
         <meta name="description" content="A website to host Free Swap">
         <meta name="keywords" content="Macalester, free swap">
 
-        <link rel="stylesheet" href="styles.css"> <!-- Folder that will determine css stylings -->
+        <!-- Folder that will determine css stylings -->
+        <link rel="stylesheet" href="styles.css">
+
     </head>
     <body>
-        <div>
-            <h1>
-                Free Swap
-            </h1>
+        <!-- Top section -->
+        <div class="top">
+            <div class="website_name">
+                <h1>
+                    Free Swap
+                </h1>
+            </div>
+            <!-- Code taken and modified from: https://www.w3schools.com/howto/howto_css_menu_icon.asp -->
+            <div class="menu_button", onclick="openMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <script>
+                    function openMenu(menu_button) {
+                        menu_button.classList.toggle("change");
+                    }
+                </script>
+            </div>
         </div>
         
-        <!-- Attempt at making grid of numbers -->
+        <!-- Item section -->
         <div class="wrapper", id="main">
-            <script src="listing.js"></script>   
+            <script src="listing.js"></script>
         </div>
     
     </body>
