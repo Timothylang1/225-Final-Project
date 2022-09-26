@@ -1,0 +1,27 @@
+.top {
+    /* Creates linear gradient from left to right */
+    background-image: linear-gradient(to right, #F5F5F5, #A5A5A5);
+    flex-wrap: wrap;
+    padding: 40px;
+
+}
+
+.flexbox {
+    display: flex;
+}
+
+.opening_line {
+    /* The combination of these two lines allow the macalester logo to move left, but not so much that the opening line gets bunched up if the window is resized */
+    min-width: 400px;
+    flex: 0 0 70%;
+}
+
+.shortcut_line {
+    background-color: white;
+    height: 50px;
+}
+
+.macalester_logo {
+    padding-bottom: 40px;
+}
+
