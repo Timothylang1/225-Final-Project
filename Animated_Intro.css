@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    /* Anything outside of the body can't be seen */
+    overflow: hidden;
+}
+
+.icon {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    translate: -100%;
+    animation: 4s appear forwards
+}
+
+.header {
+    /* The forwards tells the program that once the animation is finished, wherever the objects are, they should stay there */
+    animation: 4s slideInLeft forwards;
+    background: #666;
+    padding: 40px;
+    translate: -100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes slideInLeft {
+    10% {
+        translate: 0%;
+    }
+    20% {
+        translate: 0%;
+    }
+    30% {
+        translate: 100%;
+    }
+    30.001% {
+        translate: -100%;
+    }
+    70% {
+        translate: -100%;
+    }
+    80% {
+        translate: 0%;
+    }
+    90% {
+        translate: 100%;
+    }
+    100% {
+        translate: 100%;
+    }
+}
+
+@keyframes appear {
+    80% {
+        translate: 100%;
+    }
+    
+    80.001% {
+        translate: -100%;
+    }
+}
