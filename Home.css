@@ -1,3 +1,9 @@
+.container {
+    max-width: 1680px;
+    /* Anything outside of this container is hidden */
+    overflow: hidden;
+}
+
 .top {
     /* Creates linear gradient from left to right */
     background-image: linear-gradient(to bottom right, #F5F5F5, #A5A5A5);
@@ -38,7 +44,20 @@
 }
 
 .macalester_logo {
+    height: 350px;
+    /* Macalester logo starts off the screen and invisible */
+    translate: -400%;
+    opacity: 0%;
+    /* Forwards tells animation that the last keystroke is the final setting of this object. Otherwise, it will revert back to its original form */
+    animation: 4s slideInReveal forwards;
     padding-bottom: 40px;
+}
+
+@keyframes slideInReveal{
+    100% {
+        translate: 0%;
+        opacity: 100%;
+    }
 }
 
 .shortcut_line {
