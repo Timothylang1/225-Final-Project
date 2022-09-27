@@ -14,7 +14,7 @@ body {
     animation: 4s appear forwards
 }
 
-.header {
+.cover {
     /* The forwards tells the program that once the animation is finished, wherever the objects are, they should stay there */
     animation: 4s slideInLeft forwards;
     background: #666;
