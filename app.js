@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 
 app.use(express.static(__dirname + "/public"));
 app.set("views", __dirname + "/public/views");
-app.set("view engine", "html");
+app.set("view engine", "ejs");
 
 app.use(
   bodyParser.urlencoded({
@@ -55,11 +55,11 @@ const DB = mongoose.connection.useDb("freeswap");
 // firstBug.save();
 
 app.get("/", (req, res) => {
-  res.render("home2.ejs");
+  res.render("home2");
 });
 
 app.get("/about", (req, res) => {
-  res.render("home");
+  res.render("About");
 });
 
 app.listen(port, () => {
