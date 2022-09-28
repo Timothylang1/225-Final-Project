@@ -121,9 +121,7 @@
 }
 
 .latest_additions {
-    height: 650px;
     background-color: white;
-    text-align: center;
 }
 
 .latest_additions > .opening {
@@ -131,12 +129,36 @@
     font-family: system-ui;
     font-weight: 500;
     font-size: 50px;
+    text-align: center;
+
 }
 
-.latest_additions > .container {
+.latest_additions > .container_latest {
     display: flex;
-    height: 500px;
     background-color: #A5A5A5;
+    align-items: center;
+    height: 500px;
+
+}
+
+.latest_additions > .container_latest > .latest_items {
+    display: flex;
+    flex-grow: 1;
+    background-color: #000000;
+    height: 300px;
+    /* Any of the number of recently uploaded items that don't fit are instead hidden */
+    overflow: hidden;
+}
+
+.arrow {
+    height: 50px;
+    margin: 0px 50px 0px 50px;
+}
+
+.item {
+    width: 400px;
+    background-color: #D44420;
+    height: 400px;
 }
 
 
