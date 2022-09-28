@@ -1,0 +1,138 @@
+.container {
+  max-width: 1680px;
+  /* Anything outside of this container is hidden */
+  overflow: hidden;
+}
+
+.top {
+  /* Creates linear gradient from left to right */
+  background-image: linear-gradient(to bottom right, #f5f5f5, #a5a5a5);
+  flex-wrap: wrap;
+  padding: 40px 40px 40px 40px;
+  height: 550px;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.opening_line {
+  /* The combination of these two lines allow the macalester logo to move left, but not so much that the opening line gets bunched up if the window is resized */
+  min-width: 600px;
+  flex: 0 0 70%;
+}
+
+.opening_line > .Welcome {
+  color: #d44420;
+  font-family: system-ui;
+  font-weight: 500;
+  font-size: 70px;
+  margin: 0;
+  /* Adjusts spacing between lines of paragraphs */
+  line-height: 80px;
+  padding-left: 70px;
+  opacity: 0%;
+  animation: 4s slideInReveal forwards;
+}
+
+.opening_line > .Welcome_2 {
+  color: #01426a;
+  font-family: system-ui;
+  font-size: 30px;
+  /* Adjusts spacing between lines of paragraphs */
+  line-height: 10px;
+  padding-left: 70px;
+  opacity: 0%;
+  animation: 4s revealSlow forwards;
+}
+
+.macalester_logo {
+  height: 350px;
+  /* Macalester logo starts off the screen and invisible */
+  translate: -400%;
+  opacity: 0%;
+  /* Forwards tells animation that the last keystroke is the final setting of this object. Otherwise, it will revert back to its original form */
+  animation: 4s slideInReveal forwards;
+}
+
+@keyframes revealSlow {
+  60% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes slideInReveal {
+  100% {
+    translate: 0%;
+    opacity: 100%;
+  }
+}
+
+.shortcut_line {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  border-radius: 25px;
+  padding: 0;
+  min-width: 840px;
+  /* Moves the shortcut line down a bunch */
+  margin-top: 100px;
+}
+
+/* IMPORTANT NOTICE */
+/* Some stylings based off of middle_items from styles.css */
+
+.shortcut_line > .middle_items {
+  flex-basis: 17%;
+  margin: 0;
+
+  /* Declaring all font options */
+  color: #d44420;
+  font-size: 18px;
+  font-family: system-ui;
+  font-weight: 500;
+}
+
+.shortcut_line > .middle_items:hover {
+  background-color: #dddddd;
+  transition: 0.7s;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.shortcut_line > .shop_now {
+  background-color: #01426a;
+  border-radius: 25px;
+  flex-grow: 1;
+
+  /* Declaring all font options */
+  color: #ffffff;
+  font-size: 18px;
+  font-family: system-ui;
+  font-weight: 500;
+  line-height: 15px;
+  text-align: center;
+}
+
+.latest_additions {
+  height: 650px;
+  background-color: white;
+  text-align: center;
+}
+
+.latest_additions > .opening {
+  color: #d44420;
+  font-family: system-ui;
+  font-weight: 500;
+  font-size: 50px;
+}
+
+.latest_additions > .container {
+  display: flex;
+  height: 500px;
+  background-color: #a5a5a5;
+}
