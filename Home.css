@@ -9,7 +9,7 @@
     background-image: linear-gradient(to bottom right, #F5F5F5, #A5A5A5);
     flex-wrap: wrap;
     padding: 40px 40px 40px 40px;
-    height: 450px;
+    height: 550px;
 
 }
 
@@ -32,6 +32,8 @@
     /* Adjusts spacing between lines of paragraphs */
     line-height: 80px;
     padding-left: 70px;
+    opacity: 0%;
+    animation: 4s slideInReveal forwards;
 }
 
 .opening_line > .Welcome_2 {
@@ -41,6 +43,8 @@
     /* Adjusts spacing between lines of paragraphs */
     line-height: 10px;
     padding-left: 70px;
+    opacity: 0%;
+    animation: 4s revealSlow forwards;
 }
 
 .macalester_logo {
@@ -50,10 +54,19 @@
     opacity: 0%;
     /* Forwards tells animation that the last keystroke is the final setting of this object. Otherwise, it will revert back to its original form */
     animation: 4s slideInReveal forwards;
-    padding-bottom: 40px;
 }
 
-@keyframes slideInReveal{
+@keyframes revealSlow {
+    60% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slideInReveal {
     100% {
         translate: 0%;
         opacity: 100%;
@@ -67,7 +80,13 @@
     border-radius: 25px;
     padding: 0;
     min-width: 840px;
+    /* Moves the shortcut line down a bunch */
+    margin-top: 100px;
+    
 }
+
+/* IMPORTANT NOTICE */
+/* Some stylings based off of middle_items from styles.css */
 
 .shortcut_line > .middle_items{
     flex-basis: 17%;
@@ -101,7 +120,24 @@
     text-align: center;
 }
 
-.middle {
-    height: 1000px;
+.latest_additions {
+    height: 650px;
     background-color: white;
+    text-align: center;
 }
+
+.latest_additions > .opening {
+    color : #D44420;
+    font-family: system-ui;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.latest_additions > .container {
+    display: flex;
+    height: 500px;
+    background-color: #A5A5A5;
+}
+
+
+
