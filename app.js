@@ -39,18 +39,17 @@ const DB = mongoose.connection.useDb("freeswap");
 
 // Creating bug schema and Model 📝
 
-const bugSchema = mongoose.Schema({
+const itemSchema = mongoose.Schema({
   name: String,
   description: String,
 });
 
-const Bug = DB.model("bug", bugSchema, "items");
+const Item = DB.model("item", itemSchema, "items");
 
 function createItem(name, description) {
-  const newItem = new Bug({
-    name: "testing after changes 1 ",
-    description:
-      "creating a mongoose data base using the url but cannot find it in the mongo show db in the terminal",
+  const newItem = new Item({
+    name: name,
+    description: description,
   });
   return newItem;
 }
@@ -70,8 +69,9 @@ app.route("/about").get((req, res) => {
 
 app
   .route("/testing-database")
-  .get((req, res) => {
-    res.render("testing-database");
+  .get(async (req, res) => {
+    let items = await Item.find({});
+    res.render("testing-database", { items });
   })
   .post((req, res) => {
     let name = req.body.Name;

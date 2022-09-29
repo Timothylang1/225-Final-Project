@@ -9,6 +9,22 @@
 </head>
 
 <body>
+
+    <ul>
+        <% for (var i=0; i < items.length; i++) { %>
+            <li>
+                <div>
+                    <span>
+                        <%= items[i].name %>
+                    </span>
+                    <span>
+                        <%= items[i].description %>
+                    </span>
+                </div>
+            </li>
+            <% } %>
+    </ul>
+
     <form method="POST" action="/testing-database">
         <input type="text" name="Name" id="Name" />
         <input type="text" name="description" id="description">
