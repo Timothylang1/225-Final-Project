@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- index.html will always be the first file the browser opens -->
+<html lang="en-US">
+
+<head>
+    <!-- Includes information about website -->
+    <title>Example Website</title>
+    <meta charset="utf-8" />
+    <!-- IMPORTANT TO ADD THIS LINE -->
+    <meta name="viewport" content="width=device-width, inital-scale=1" />
+    <!-- allows website to be displayed correctly on mobile devices -->
+    <meta name="author" content="Timothy Lang" />
+    <meta name="description" content="A website to host Free Swap" />
+    <meta name="keywords" content="Macalester, free swap" />
+
+    <!-- Folder that will determine css stylings -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Just a div, but exclusively for navigation bar at the top of the screen. Used by Google to help with search engine -->
+        <nav class="navigation_bar">
+            <div class="left_bar font">
+                <!-- alt = alternate text shown if the image can't be displayed -->
+                <img src="images/icon.png" alt="" height="65" class="icon" />
+                <!-- Table for div is to help center the text in it to be in the middle of the div -->
+                <p>Free Swap</p>
+            </div>
+            <div class="middle_bar">
+                <button type="button" onclick="location.href = '/';" class="middle_items font">
+                    Home
+                </button>
+                <button type="button" onclick="location.href = '/about';" class="middle_items font">
+                    About
+                </button>
+                <button type="button" onclick="location.href = '/admin';" class="middle_items font">
+                    Admin
+                </button>
+                <button type="button" onclick="location.href = '/all-items';" class="middle_items font">
+                    All Items
+                </button>
+            </div>
+            <input type="Search" placeholder="Search" class="font search_bar" />
+        </nav>
+        <!-- Picture of free swap front door, title, and information about the free swap. -->
+        <div>
+            <img src="images/front-door.png" alt="" height="400" style="
+            position: absolute;
+            top: 150px;
+            right: 60px;
+            width: 500px;
+            height: 550px;
+            border: none;
+          " />
+
+            <p style="
+            font-family: Barlow;
+            color: #d44420;
+            font-size: 50px;
+            position: absolute;
+            top: 30px;
+            left: 60px;
+          ">
+                About
+            </p>
+
+            <p style="
+            font-family: Barlow;
+            color: #01426a;
+            font-size: 25px;
+            position: absolute;
+            top: 160px;
+            left: 70px;
+          ">
+                The Mac Free Swap is a free item exchange run by the Macalester<br />
+                Sustainability Office. The exchange has been helping Macalester
+                achieve<br />
+                our Zero Waste goal since 2008, emphasizing the “reduce” and
+                “reuse”<br />
+                portions of “reduce, reuse, and recycle.” It diverts useful materials
+                to the<br />
+                Mac community for reuse instead of sending items to a landfill.<br />
+                <br />The purpose of this small-scale project based on the circular
+                economy<br />
+                model is to keep the benefits of free items within the Mac
+                community<br />
+                rather than contributing to businesses’ profits. This model relies on
+                mutual<br />
+                aid to function because in order for folks to find items they need,
+                other<br />
+                folks need to contribute items they don’t. <br /><br />Location: in
+                the garage behind the Sustainability Office at 1657 Lincoln<br />
+                (second house behind 77 Mac).<br /><br />
+                Hours: open 9am-6pm daily.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

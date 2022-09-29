@@ -54,12 +54,17 @@ const DB = mongoose.connection.useDb("freeswap");
 
 // firstBug.save();
 
-app.get("/", (req, res) => {
-  res.render("home2");
-});
+app
+  .route("/")
+  .get((req, res) => {
+    res.render("home");
+  })
+  .post((req, res) => {
+    res.render("home");
+  });
 
-app.get("/about", (req, res) => {
-  res.render("About");
+app.route("/about").get((req, res) => {
+  res.render("about");
 });
 
 app.listen(port, () => {
