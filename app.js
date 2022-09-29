@@ -46,13 +46,14 @@ const bugSchema = mongoose.Schema({
 
 const Bug = DB.model("bug", bugSchema, "items");
 
-// const firstBug = new Bug({
-//   name: "items ",
-//   description:
-//     "creating a mongoose data base using the url but cannot find it in the mongo show db in the terminal",
-// });
-
-// firstBug.save();
+function createItem(name, description) {
+  const newItem = new Bug({
+    name: "testing after changes 1 ",
+    description:
+      "creating a mongoose data base using the url but cannot find it in the mongo show db in the terminal",
+  });
+  return newItem;
+}
 
 app
   .route("/")
@@ -75,6 +76,8 @@ app
   .post((req, res) => {
     let name = req.body.Name;
     let description = req.body.description;
+    let newItem = createItem(name, description);
+    newItem.save();
     res.render("success", { name, description });
   });
 
