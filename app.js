@@ -39,12 +39,12 @@ const DB = mongoose.connection.useDb("freeswap");
 
 // Creating bug schema and Model 📝
 
-// const bugSchema = mongoose.Schema({
-//   name: String,
-//   description: String,
-// });
+const bugSchema = mongoose.Schema({
+  name: String,
+  description: String,
+});
 
-// const Bug = DB.model("bug", bugSchema, "items");
+const Bug = DB.model("bug", bugSchema, "items");
 
 // const firstBug = new Bug({
 //   name: "items ",
@@ -66,6 +66,17 @@ app
 app.route("/about").get((req, res) => {
   res.render("about");
 });
+
+app
+  .route("/testing-database")
+  .get((req, res) => {
+    res.render("testing-database");
+  })
+  .post((req, res) => {
+    let name = req.body.Name;
+    let description = req.body.description;
+    res.render("success", { name, description });
+  });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
