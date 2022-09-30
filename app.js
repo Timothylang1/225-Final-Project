@@ -17,13 +17,9 @@ app.use(
   })
 );
 
-// parse application/json
 app.use(bodyParser.json());
-// parse the raw data
 app.use(bodyParser.raw());
-// parse text
 app.use(bodyParser.text());
-
 app.use(bodyParser.json());
 
 mongoose.connect(
@@ -67,6 +63,14 @@ app.route("/about").get((req, res) => {
   res.render("about");
 });
 
+app.route("/admin").get((req, res) => {
+  res.render("admin");
+});
+
+app.route("/all-items").get((req, res) => {
+  res.render("all-items");
+});
+
 app
   .route("/testing-database")
   .get(async (req, res) => {
@@ -82,5 +86,5 @@ app
   });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`listening on port ${port}`);
 });
