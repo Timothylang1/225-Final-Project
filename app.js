@@ -85,6 +85,12 @@ app
     res.render("success", { name, description });
   });
 
+app.route("/delete/:id").get((req, res) => {
+  const id = req.params.id;
+  Item.find({ _id: id }).remove().exec();
+  res.render("deleted");
+});
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
