@@ -80,7 +80,29 @@
                 Latest Additions
             </p>
             <div class="latest_items_container">
-                <img src="images/left_arrow.png" alt="" class="left_arrow">
+                <img src="images/left_arrow.png" alt="" class="left_arrow" onclick="moveLeft()">
+                <script>
+                    function moveLeft() {
+                        items = document.getElementsByClassName("test_item");
+                        var newspaperSpinning = [
+                            { translate: '-100px' }
+                            ];
+                        var newspaperTiming = {
+                            duration: 500, // In milliseconds
+                            fill: 'forwards',
+                            easing: 'ease-in-out' // Eases in and eases out animation for more fluid movement
+                            }
+                        for (i=0; i < items.length; i++) {
+                            console.log(items[0].getBoundingClientRect().x);
+                            items[i].style.backgroundColor = "#000000";
+                            items[i].animate(newspaperSpinning, newspaperTiming);
+                            // items[i].style.animation = "4s slideLeft forwards";
+                        }
+                        console.log(items[0].offsetWidth);
+                        console.log(items[0].getBoundingClientRect().x);
+                        // console.log(document.getElementsByClassName("test_item").length);
+                    }
+                </script>
                 <div class="latest_items">
                     <div class="test_item">
                         <p>
@@ -108,7 +130,9 @@
                         </p>
                     </div>
                 </div>
-                <img src="images/right_arrow.png" alt="" class="right_arrow">
+                <img src="images/right_arrow.png" alt="" class="right_arrow" id="right_arrow">
+                <!-- Sets up javascript for moving elements left and right -->
+                <script src="javascript/shuffle_latest_items.js"></script>
             </div>
         </div>
     </div>

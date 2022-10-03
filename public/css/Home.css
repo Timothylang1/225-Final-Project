@@ -158,16 +158,21 @@
   padding: 10px;
 }
 
+.latest_addition > .latest_items_container > .latest_items > .test_item {
+  text-align: center;
+  flex: 1 0 25%;
+  background-color: #ffffff;
+  translate: 0%;
+}
 
-.test_item {
-  background-color: #d44420;
-  border: #000000;
-  flex: 0 0 25%;
+
+.test_item > p {
   border: #000000;
   border-style: solid;
+  background-color: #d44420;
   border-width: 5px;
-  /* flex-basis: 25%; */
-  padding: 5px;
+  margin: 5px;
 
   font-size: 30px;
+
 }
