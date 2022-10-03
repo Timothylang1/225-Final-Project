@@ -14,12 +14,11 @@
         <% for (var i=0; i < items.length; i++) { %>
             <li>
                 <div>
-                    <span>
-                        <%= items[i].name %>
-                    </span>
-                    <span>
+                    <%= items[i].name %>
                         <%= items[i].description %>
-                    </span>
+                </div>
+                <div>
+                    <a href="/delete/<%= items[i]._id %>">delete</a>
                 </div>
             </li>
             <% } %>
