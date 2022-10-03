@@ -23,7 +23,7 @@ body {
     /* Display type is flex*/
     display: flex;
     /* Aligns all items within flexbox to be centered along horizontal center axis. Also shrinks each individual item to smallest amount height wise it can be */
-    /* ---------------- SUPER USEFUL LINE -------------------------- */
+    /* ---------------- SUPER USEFUL LINE FOR FLEXBOX -------------------------- */
     align-items: center;
     padding: 0px 10px 0px 10px;
 }
