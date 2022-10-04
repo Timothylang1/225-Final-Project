@@ -21,12 +21,19 @@
                     <a href="/delete/<%= items[i]._id %>">delete</a>
                 </div>
             </li>
+
+            <img src="data:image/<%=image.img.contentType%>;base64,
+            <%=image.img.data.toString('base64')%>">
             <% } %>
     </ul>
 
-    <form method="POST" action="/testing-database">
+    <form method="POST" action="/testing-database" enctype="multipart/form-data">
         <input type="text" name="Name" id="Name" />
         <input type="text" name="description" id="description">
+        <div>
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" name="image" value="" required>
+        </div>
         <input type="submit" />
     </form>
 </body>
