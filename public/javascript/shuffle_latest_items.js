@@ -3,10 +3,10 @@ var x = 0;
 // TOTAL VISIBLE ITEMS ON SCREEN. The animation will delay only for elements on screen for the cool effect
 const visible_items = 4;
 
-document.getElementsByClassName('left_arrow')[0].setAttribute('onclick', 'moveLeft()'); // -1
-document.getElementsByClassName('right_arrow')[0].setAttribute('onclick', 'moveRight()'); // 1
+document.getElementsByClassName('left_arrow')[0].setAttribute('onclick', 'clickLeft()'); // -1
+document.getElementsByClassName('right_arrow')[0].setAttribute('onclick', 'clickRight()'); // 1
 
-function moveLeft() {
+function clickRight() {
     // Gets all the items on the recent items screen
     items = document.getElementsByClassName("item");
     console.log("x: " + x);
@@ -40,7 +40,7 @@ function moveLeft() {
     }
 }
 
-function moveRight() {
+function clickLeft() {
     // Gets all the items on the recent items screen
     items = document.getElementsByClassName("item");
 
