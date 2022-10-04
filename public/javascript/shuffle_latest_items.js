@@ -32,6 +32,10 @@ function moveLeft() {
         easing: 'ease-in-out', // Eases in and eases out animation for more fluid movement
     };
     for (i=0; i < items.length; i++) {
+        // Only apply the animation delay for the elements that are visible + one element to the right
+        if (i >= -x - 1 && i <= -x + visible_items - 1) {
+            attributes['delay'] = (i + x + 1) * 50;
+        }
         items[i].animate(movement, attributes);
     }
 }
@@ -63,6 +67,11 @@ function moveRight() {
         easing: 'ease-in-out', // Eases in and eases out animation for more fluid movement
     };
     for (i=0; i < items.length; i++) {
+        // Only apply the delay for the elements that are visible + one element to the left
+        if (i >= -x && i <= -x + visible_items) {
+            attributes['delay'] = (visible_items - i - x) * 50;
+        }
+        
         items[i].animate(movement, attributes);
     }
 }
