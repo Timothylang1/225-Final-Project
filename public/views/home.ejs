@@ -80,53 +80,106 @@
                 Latest Additions
             </p>
             <div class="latest_items_container">
-                <img src="images/left_arrow.png" alt="" class="left_arrow" onclick="moveLeft()">
-                <script>
-                    function moveLeft() {
-                        items = document.getElementsByClassName("test_item");
-                        var newspaperSpinning = [
-                            { translate: '-100px' }
-                            ];
-                        var newspaperTiming = {
-                            duration: 500, // In milliseconds
-                            fill: 'forwards',
-                            easing: 'ease-in-out' // Eases in and eases out animation for more fluid movement
-                            }
-                        for (i=0; i < items.length; i++) {
-                            console.log(items[0].getBoundingClientRect().x);
-                            items[i].style.backgroundColor = "#000000";
-                            items[i].animate(newspaperSpinning, newspaperTiming);
-                            // items[i].style.animation = "4s slideLeft forwards";
-                        }
-                        console.log(items[0].offsetWidth);
-                        console.log(items[0].getBoundingClientRect().x);
-                        // console.log(document.getElementsByClassName("test_item").length);
-                    }
-                </script>
+                <img src="images/left_arrow.png" alt="" class="left_arrow">
                 <div class="latest_items">
-                    <div class="test_item">
+                    <div class="item">
                         <p>
                             Item 1
                         </p>
                     </div>
-                    <div class="test_item">
+                    <div class="item">
                         <p>
                             Item 2
                         </p>
                     </div>
-                    <div class="test_item">
+                    <div class="item">
                         <p>
                             Item 3
                         </p>
                     </div>
-                    <div class="test_item">
+                    <div class="item">
                         <p>
                             Item 4
                         </p>
                     </div>
-                    <div class="test_item">
+                    <div class="item">
                         <p>
                             Item 5
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 6
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 7
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 8
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 9
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 10
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 1
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 2
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 3
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 4
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 5
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 6
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 7
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 8
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 9
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Item 10
                         </p>
                     </div>
                 </div>
