@@ -5,7 +5,9 @@ body {
 .container {
     max-width: 1680px;
     /* Anything outside of the container is hidden */
-    overflow: hidden;
+    overflow: visible;
+    margin: auto;
+
 }
 
 .font {
@@ -26,6 +28,7 @@ body {
     /* ---------------- SUPER USEFUL LINE FOR FLEXBOX -------------------------- */
     align-items: center;
     padding: 0px 10px 0px 10px;
+    background-color: white;
 }
 
 /* All the items in the left bar */
@@ -75,6 +78,7 @@ body {
     transition: 0.7s;
     font-size: 20px;
     font-weight: 900;
+    color: white;
 }
 
 /* All items on the right */
