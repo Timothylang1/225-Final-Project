@@ -161,7 +161,7 @@ body {
 
 .topbar > .search_bar {
     padding: 7px 15px;
-    margin-right: 15px;
+    margin-left: 15px;
     background-color: #C4C4C4;
     border-style: hidden;
     border-radius: 40px;
@@ -193,20 +193,32 @@ body {
 .menu {
     position: absolute;
     top: 100%;
-    right: 0%;
+    left: 0%;
 
     background-color: white;
 
-    width: 100px;
-    height: 100px;
-
     display: none;
+    padding: 10px;
+    
+    font-size: 11px;
 
 }
 
+.menu > .sort_filter_selector {
+    display: flex;
+    align-items: center;
+
+}
+
+.menu > .sort_filter_selector > p {
+    margin: 0px;
+}
+
+/* END OF MENU OPTIONS */
+
 /* Adds filler for top bar for helping aligning items, nothing else */
 .topbar > .filler {
-    width: 30px;
+    width: 20px;
 
 }
 
@@ -232,6 +244,26 @@ body {
 
 }
 
+.topbar > .filter {
+    position: relative;
+}
+
+.filter:hover .menu {
+    background-color: lightblue;
+    display: block;
+}
+
+/* Split hover of image */
+.filter:hover > .sort_and_filter > img {
+    filter: brightness(20%);
+
+}
+
+.filter:hover > .sort_and_filter {
+    background-color: lightblue;
+
+}
+
 /* END OF ALIGNING SECTION FOR MENU */
 
 .items_container {
@@ -241,6 +273,9 @@ body {
     width: 97%;
     overflow-y: auto;
 
+    /* Needed to asign div's flex order for rearranging with filter */
+    display: flex;
+    flex-direction: column;
 }
 
 .items_container > .column_label {
@@ -249,6 +284,8 @@ body {
     font-size: 11px;
     font-weight: 700;
     padding: 0px 20px;
+
+    order: 0;
 
 }
 
