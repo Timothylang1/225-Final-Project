@@ -140,7 +140,6 @@ body {
     align-items: center;
     background-color: white;
     border-radius: 10px;
-    height: 8%;
 
      /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
     white-space: nowrap;
@@ -168,73 +167,72 @@ body {
     border-radius: 40px;
 }
 
-
-.topbar > .sort_and_filter {
+.sort_and_filter {
     display: flex;
-    /* Aligns items along center axis */
-    align-items: center;
 
     /* Aligns items along horizontal axis and vertical axis to be in the center */
     justify-content: center;
-    margin: 10px 0px;
-    padding: 3px 5px;
-    font-size: 11px;
+    align-items: center;
 
-    /* Create hidden border that will turn solid */
-    border-style: solid;
-    border-width: 1px 1px 0px 1px;
-    border-color: white;
-    
-    /* Create background as white to cover the top part of the border for the dropdown menu */
-    z-index: 1;
-    background-color: white;
+    padding: 0px 5px 5px 5px;
+    margin-top: 5px;
+    font-size: 11px;
 
     cursor: pointer;
 
 }
 
-/* Split hover of image */
-.topbar > .sort_and_filter:hover > img {
-    /* background-color: lightblue; */
-    transition: 0.7s;
-    filter: brightness(20%);
-
-}
-
-.topbar > .sort_and_filter:hover {
-    /* background-color: lightblue; */
-    transition: 0.7s;
-    border-color: black;
-
-}
-
-.topbar > .sort_and_filter > img {
+.sort_and_filter > img {
     height: 15px;
     padding: 5px;
 
 }
 
-/* Adds filler for top bar for helping aligning items, nothing else */
-.topbar > .right_margin {
-    margin-right: 30px;
-
-}
-
 /* These next parts are for the dropdown menus of the sort and filter */
-.sort_menu {
+
+.menu {
     position: absolute;
-    top: 46px;
-    right: 91px;
+    top: 100%;
+    right: 0%;
+
+    background-color: white;
+
     width: 100px;
     height: 100px;
-    background-color: white;
-    z-index: 0;
 
-    /* Border properties to match with the sort properties */
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    display: none;
+
 }
+
+/* Adds filler for top bar for helping aligning items, nothing else */
+.topbar > .filler {
+    width: 30px;
+
+}
+
+/* This section is setting up alignment of menu dropdown + work on hover functionality */
+
+.topbar > .sort {
+    position: relative;
+}
+
+.sort:hover .menu {
+    background-color: lightblue;
+    display: block;
+}
+
+/* Split hover of image */
+.sort:hover > .sort_and_filter > img {
+    filter: brightness(20%);
+
+}
+
+.sort:hover > .sort_and_filter {
+    background-color: lightblue;
+
+}
+
+/* END OF ALIGNING SECTION FOR MENU */
 
 .items_container {
     padding: 0px 10px;

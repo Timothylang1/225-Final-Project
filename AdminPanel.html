@@ -42,16 +42,21 @@
             <div class="all_items_container">
                 <div class="topbar">
                     <p class="all_items">All Items</p>
-                    <input type="Search" placeholder="Search" class="font search_bar"/>
+                    <input type="Search" placeholder="Search" class="search_bar"/>
                     <!-- NEED TO CHANGE LOCATION OF PNG'S ONCE IMPLEMENTED INTO MAIN FRAME -->
-                    <div class="sort_and_filter">
-                        <img src="public/images/sort.png" alt="">
-                        <p>Sort</p>
+                    <div class="sort">
+                        <!-- Drop down menu is made up of three divs (the hover, the border, and the actualy menu) -->
+                        <div class="sort_and_filter">
+                            <img src="public/images/sort.png" alt="">
+                            <p>Sort</p>
+                        </div>
+                        <div class="menu"></div>
                     </div>
-                    <div class="sort_and_filter right_margin">
+                    <div class="sort_and_filter">
                         <img src="public/images/filter.png" alt="">
                         <p>Filter</p>
                     </div>
+                    <div class="filler"></div>
                 </div>
                 <div class="items_container">
                     <div class="column_label">
