@@ -4,6 +4,7 @@ body {
 }
 
 .top {
+  /* Enables elements to be stacked on each other rather than on a single line */
   flex-wrap: wrap;
   padding: 40px 40px 40px 40px;
   height: 550px;

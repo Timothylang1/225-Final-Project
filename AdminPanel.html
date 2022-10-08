@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!-- index.html will always be the first file the browser opens -->
+<html lang="en-US">
+
+<head>
+    <!-- Includes information about website -->
+    <title>
+        Admin Page
+    </title>
+    <meta charset="utf-8"> <!-- IMPORTANT TO ADD THIS LINE -->
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <!-- allows website to be displayed correctly on mobile devices -->
+    <meta name="author" content="Timothy Lang">
+    <meta name="description" content="A website to host Free Swap">
+    <meta name="keywords" content="Macalester, free swap">
+
+    <!-- Folder that will determine css stylings -->
+    <link rel="stylesheet" href="AdminPanel.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="left_bar_container">
+            <div class="icon_and_admin_text">
+                <img src="public/images/icon.png" alt="">
+                <p>Free Swap Admin</p>
+            </div>
+            <div class="button">
+                <img src="public/images/side_button.png" alt="">
+                <p>All Items</p>
+            </div>
+            <div class="button">
+                <img src="public/images/side_button.png" alt="">
+                <p>New Items</p>
+            </div>
+        </div>
+        <div class="right_side_container">
+            <div class="toptopbar">
+                <p class="items_label">Items</p>
+                <button class="logout">LOGOUT</button>
+            </div>
+            <div class="all_items_container">
+                <div class="topbar">
+                    <p class="all_items">All Items</p>
+                    <input type="Search" placeholder="Search" class="font search_bar"/>
+                    <!-- NEED TO CHANGE LOCATION OF PNG'S ONCE IMPLEMENTED INTO MAIN FRAME -->
+                    <div class="sort_and_filter">
+                        <img src="public/images/sort.png" alt="">
+                        <p>Sort</p>
+                    </div>
+                    <div class="sort_and_filter right_margin">
+                        <img src="public/images/filter.png" alt="">
+                        <p>Filter</p>
+                    </div>
+                </div>
+                <div class="items_container">
+                    <div class="column_label">
+                        <p class="img_label">Image</p>
+                        <p class="name_label">Name</p>
+                        <p class="description_label">Description</p>
+                        <p class="type_label">Type</p>
+                        <p class="date_label">Date Added</p>
+                        <p class="delete_label">Delete Item</p>
+                    </div>
+                    <div class="single_item">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Foot-wear</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Foot-wear</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn asfsdf sad fads fasd fdsdasfads fasd fdsasdfasdf asdf sdaf sdafsdfsdfsadfsadf asd fasd fd asd fsdfsfsdaf sd fsd fasdf asd fasd f dasf asdfasdf sdaf asd</p>
+                        </div>
+                        <div class="type">
+                            <p>Foot-wear</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+                    <div class="single_item">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Foot-wear</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Foot-wear</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Foot-wear</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Foot-wear</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        <!-- <div class="topbar">
+            <p class="all_items">All Items</p>
+            <input type="Search" placeholder="Search" class="font search_bar"/>
+            NEED TO CHANGE LOCATION OF PNG'S ONCE IMPLEMENTED INTO MAIN FRAME
+            <div class="sort_and_filter">
+                <img src="public/images/sort.png" alt="">
+                <p>Sort</p>
+            </div>
+            <div class="sort_and_filter right_margin">
+                <img src="public/images/filter.png" alt="">
+                <p>Filter</p>
+            </div>
+        </div>
+        <div class="filler_for_top_bar"></div>
+        <div class="column_label">
+            <p class="item_label">Item</p>
+            <p class="description_label">Description</p>
+            <p class="type_label">Type</p>
+            <p class="date_label">Date Added</p>
+            <p class="delete_label">Delete Item</p>
+        </div>
+        <div class="items_container">
+            <div class="single_item">
+                <div class="item">
+                    <img src="public/images/sample1.png" alt="">
+                    <p>Blue Shirt</p>
+                </div>
+                <div class="description">
+                    <p>This is a shirt yayayayajkyjdslkyaskld lkajs flsdajf lasdj falksdjf lasdfj sadoifjwj afklsd fjaskldfj sdajf lasdfkjlsda fjailsd f</p>
+                </div>
+                <div class="type">
+                    <p>Shirt</p>
+                </div>
+                <div class="date">
+                    <p class="main_date">May 26, 2020</p>
+                    <p class="time_stamp">6:30 am</p>
+                </div>
+                <button class="delete">Delete</button>
+            </div>
+
+            <div class="single_item">
+                <div class="item">
+                    <img src="public/images/sample1.png" alt="">
+                    <p>Blue Shirt</p>
+                </div>
+                <div class="description">
+                    <p>This is a shirt yayayayajkyjdslkyaskld lkajs flsdajf lasdj falksdjf lasdfj sadoifjwj afklsd fjaskldfj sdajf lasdfkjlsda fjailsd f</p>
+                </div>
+                <div class="type">
+                    <p>Shirt</p>
+                </div>
+                <div class="date">
+                    <p class="main_date">May 26, 2020</p>
+                    <p class="time_stamp">6:30 am</p>
+                </div>
+                <button class="delete">Delete</button>
+            </div>
+
+            <div class="single_item">
+                <div class="item">
+                    <img src="public/images/sample5.png" alt="">
+                    <p>Blue Shirt</p>
+                </div>
+                <div class="description">
+                    <p>This is a shirt yayayayajkyjdslkyaskld lkajs flsdajf lasdj falksdjf lasdfj sadoifjwj afklsd fjaskldfj sdajf lasdfkjlsda fjailsd f</p>
+                </div>
+                <div class="type">
+                    <p>Shirt</p>
+                </div>
+                <div class="date">
+                    <p class="main_date">May 26, 2020</p>
+                    <p class="time_stamp">6:30 am</p>
+                </div>
+                <button class="delete">Delete</button>
+            </div>
+
+            <div class="single_item">
+                <div class="item">
+                    <img src="public/images/sample5.png" alt="">
+                    <p>Blue Shirt</p>
+                </div>
+                <div class="description">
+                    <p>This is a shirt yayayayajkyjdslkyaskld lkajs flsdajf lasdj falksdjf lasdfj sadoifjwj afklsd fjaskldfj sdajf lasdfkjlsda fjailsd f</p>
+                </div>
+                <div class="type">
+                    <p>Shirt</p>
+                </div>
+                <div class="date">
+                    <p class="main_date">May 26, 2020</p>
+                    <p class="time_stamp">6:30 am</p>
+                </div>
+                <button class="delete">Delete</button>
+            </div>
+
+            <div class="single_item">
+                <div class="item">
+                    <img src="public/images/sample5.png" alt="">
+                    <p>Blue Shirt</p>
+                </div>
+                <div class="description">
+                    <p>This is a shirt yayayayajkyjdslkyaskld lkajs flsdajf lasdj falksdjf lasdfj sadoifjwj afklsd fjaskldfj sdajf lasdfkjlsda fjailsd f</p>
+                </div>
+                <div class="type">
+                    <p>Shirt</p>
+                </div>
+                <div class="date">
+                    <p class="main_date">May 26, 2020</p>
+                    <p class="time_stamp">6:30 am</p>
+                </div>
+                <button class="delete">Delete</button>
+            </div>
+            
+
+        </div> -->
+    </div>
+</body>
