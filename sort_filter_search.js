@@ -8,14 +8,19 @@
 
 */
 
-// Variables used to determine how the items are sorted
-Item_Type_Sort = false;
-Alphabetical_Sort = false;
-Date_Sort = false;
+// Set filters:
+filters = {"Shirts" : false, "Shorts" : false, "Shoes" : false, "Books" : false, "House Items" : false, "Other" : false};
 
 // Initial order of elements
 order = document.getElementsByClassName("single_item");
 order = Array.from(order);
+
+// Everything below is for sorting method
+
+// Variables used to determine how the items are sorted
+Item_Type_Sort = false;
+Alphabetical_Sort = false;
+Date_Sort = false;
 
 function sorting_method(type) {
     // First change the variables based on the input
@@ -82,4 +87,13 @@ function compare(item1, item2) {
     if (item1 < item2) return -1;
     else if (item1 == item2) return 0;
     else return 1;
+}
+
+// End of sorting method
+
+// Everything below is filter method
+function filter() {
+    order.forEach(element => {
+        
+    });
 }
