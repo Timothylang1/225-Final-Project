@@ -103,28 +103,31 @@ function compare(item1, item2) {
 // End of sorting method
 
 
-// Filter methods
+// Filter / search methods
+
+// Get search bar element
+const searchInput = document.getElementsByClassName("search_bar")[0];
 
 function filter(type) {
     // Change correct filter in dictionary
-    filters_dict[type] = !filters_dict[type];
+    if (type != "input_from_search_bar") filters_dict[type] = !filters_dict[type];
 
-    // Special case where no filter's are set, then we reveal all items
-    all_filters_false = any_filters_set()
+    searchtext = searchInput.value.toLowerCase(); // Gets text from searchbar
 
-    if (all_filters_false) {
-        order.forEach(element => {
-            element.style.display = "flex";
-        });
-    }
-    else {
-        // If there is a filter set, then apply all filters by making certain items invisible
-        order.forEach(element => {
-            type_for_element = getAttributeText(element, "type");
-            if (filters_dict[type_for_element]) element.style.display = "flex";
-            else element.style.display = "none";
-        });
-    }
+    order.forEach(element => {
+        let name = getAttributeText(element, "name");
+        let description = getAttributeText(element, "description");
+        let type = getAttributeText(element, "type");
+        let date = getDate(element).toDateString().substring(4); // Only include month, day and year
+    
+        if ((name.toLowerCase().includes(searchtext) || 
+        description.toLowerCase().includes(searchtext) || 
+        type.toLowerCase().includes(searchtext) || 
+        date.toLowerCase().includes(searchtext)) && 
+        (any_filters_set() ? true : filters_dict[type])) // We still want to obey the rules of the filter + Special case where no filter's are set, then we reveal all items
+        element.style.display = "flex";
+        else element.style.display = "none";
+    });
 }
 
 function any_filters_set() {
@@ -138,47 +141,14 @@ function any_filters_set() {
     return all_filters_false;
 }
 
-// End of filter methods
-
-
-// Search methods
-
-// get search bar element
-const searchInput = document.getElementsByClassName("search_bar")[0];
+// Event listeners
 
 // Add in event listener for when the little x button is pressed on search
 searchInput.addEventListener("search", function() {
-    order.forEach(element => {
-        let type = getAttributeText(element, "type");
-        if (any_filters_set() ? true : filters_dict[type]) element.style.display = "flex"; 
-        else element.style.display = "none"; // We still want to obey the rules of the filter 
-    });
+    filter("input_from_search_bar");
 });
 
 // Add an event listener for key presses
 searchInput.addEventListener("keyup", (event) => {
-    searchtext = searchInput.value;
-    search(searchtext)
+    filter("input_from_search_bar");
 });
-
-// Search will search through all aspects of an element (date, time, name, etc.) for matches
-// Compares everything to lowercase so that search bar is less case sensitive
-function search(text) {
-    text = text.toLowerCase();
-    order.forEach(element => {
-        let name = getAttributeText(element, "name");
-        let description = getAttributeText(element, "description");
-        let type = getAttributeText(element, "type");
-        let date = getDate(element).toDateString().substring(4); // Only include month, day and year
-    
-        if ((name.toLowerCase().includes(text) || 
-        description.toLowerCase().includes(text) || 
-        type.toLowerCase().includes(text) || 
-        date.toLowerCase().includes(text)) && 
-        (any_filters_set() ? true : filters_dict[type])) // We still want to obey the rules of the filter 
-        element.style.display = "flex";
-        else element.style.display = "none";
-    });
-}
-
-// End of search methods
