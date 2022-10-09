@@ -52,7 +52,7 @@ function createItem(name, description) {
   return newItem;
 }
 
-var imageSchema = new mongoose.Schema({
+let imageSchema = new mongoose.Schema({
   name: String,
   desc: String,
   img: {
@@ -63,9 +63,9 @@ var imageSchema = new mongoose.Schema({
 
 //Image is a model which has a schema imageSchema
 
-imgModel = new mongoose.model("Image", imageSchema);
+let imgModel = new mongoose.model("Image", imageSchema);
 
-var storage = multer.diskStorage({
+let storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads");
   },
@@ -74,81 +74,8 @@ var storage = multer.diskStorage({
   },
 });
 
-var upload = multer({ storage: storage });
+let upload = multer({ storage: storage });
 
-app.get("/profile-upload-single", (req, res) => {
-  res.render("index");
-});
-app.post(
-  "/profile-upload-single",
-  upload.single("profile-file"),
-  function (req, res, next) {
-    // req.file is the `profile-file` file
-    // req.body will hold the text fields, if there were any
-    console.log(JSON.stringify(req.file));
-    var img = fs.readFileSync(req.file.path);
-    var encode_img = img.toString("base64");
-    var final_img = {
-      contentType: req.file.mimetype,
-      image: Buffer.from(encode_img, "base64"),
-    };
-    console.log("====================================");
-    console.log(final_img);
-    console.log("====================================");
-    image.create(final_img, function (err, result) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(result);
-        console.log("Saved To database");
-        res.contentType(final_img.contentType);
-        res.send(final_img.image);
-      }
-    });
-  }
-);
-
-app.get("/test-3", (req, res) => {
-  imgModel.find({}, (err, items) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("An error occurred", err);
-    } else {
-      res.render("index", { items: items });
-    }
-  });
-});
-
-app.post("/test-3", upload.single("image"), (req, res, next) => {
-  var obj = {
-    name: req.body.name,
-    desc: req.body.desc,
-    img: {
-      data: fs.readFileSync(
-        path.join(__dirname + "/uploads/" + req.file.filename)
-      ),
-      contentType: "image/png",
-    },
-  };
-  imgModel.create(obj, (err, item) => {
-    if (err) {
-      console.log(err);
-    } else {
-      imgModel.find({}, (err, items) => {
-        if (err) {
-          console.log(err);
-          res.status(500).send("An error occurred", err);
-        } else {
-          console.log("====================================");
-          console.log(items);
-          console.log("====================================");
-          fs.unlinkSync(path.join(__dirname + "/uploads/" + req.file.filename));
-          res.render("uploaded-images", { items });
-        }
-      });
-    }
-  });
-});
 // Routing 🐍
 app
   .route("/")
@@ -171,19 +98,38 @@ app.route("/all-items").get((req, res) => {
   res.render("all-items");
 });
 
-app
-  .route("/testing-database")
-  .get(async (req, res) => {
-    let items = await Item.find({});
-    res.render("testing-database", { items });
-  })
-  .post((req, res) => {
-    let name = req.body.Name;
-    let description = req.body.description;
-    let newItem = createItem(name, description);
-    newItem.save();
-    res.render("success", { name, description });
+app.get("/upload-image", (req, res) => {
+  res.render("upload-image");
+});
+app.post("/upload-image", upload.single("image"), (req, res, next) => {
+  let obj = {
+    name: req.body.name,
+    desc: req.body.desc,
+    img: {
+      data: fs.readFileSync(
+        path.join(__dirname + "/uploads/" + req.file.filename)
+      ),
+      contentType: "image/png",
+    },
+  };
+
+  imgModel.create(obj, (err, item) => {
+    if (err) {
+      console.log(err);
+    } else {
+      // grab all images and render them
+      imgModel.find({}, (err, items) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send("An error occurred", err);
+        } else {
+          fs.unlinkSync(path.join(__dirname + "/uploads/" + req.file.filename));
+          res.render("uploaded-images", { items });
+        }
+      });
+    }
   });
+});
 
 app.route("/delete/:id").get((req, res) => {
   const id = req.params.id;
