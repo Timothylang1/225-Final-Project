@@ -112,7 +112,7 @@ function filter(type) {
     // Change correct filter in dictionary
     if (type != "input_from_search_bar") filters_dict[type] = !filters_dict[type];
 
-    searchtext = searchInput.value.toLowerCase(); // Gets text from searchbar
+    searchtext = searchInput.value.toLowerCase(); // Gets text from searchbar, lowercase everything so searchbar is less case sensitive
 
     order.forEach(element => {
         let name = getAttributeText(element, "name");
