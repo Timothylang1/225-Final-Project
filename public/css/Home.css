@@ -1,12 +1,10 @@
-.container {
-  max-width: 1680px;
-  /* Anything outside of this container is hidden */
-  overflow: hidden;
+body {
+    /* Creates linear gradient from left to right */
+    background-image: linear-gradient(to bottom right, #f5f5f5, #a5a5a5);
 }
 
 .top {
-  /* Creates linear gradient from left to right */
-  background-image: linear-gradient(to bottom right, #f5f5f5, #a5a5a5);
+  /* Enables elements to be stacked on each other rather than on a single line */
   flex-wrap: wrap;
   padding: 40px 40px 40px 40px;
   height: 550px;
@@ -49,7 +47,7 @@
 .macalester_logo {
   height: 350px;
   /* Macalester logo starts off the screen and invisible */
-  translate: -400%;
+  translate: -600%;
   opacity: 0%;
   /* Forwards tells animation that the last keystroke is the final setting of this object. Otherwise, it will revert back to its original form */
   animation: 4s slideInReveal forwards;
@@ -118,21 +116,83 @@
   text-align: center;
 }
 
-.latest_additions {
-  height: 650px;
-  background-color: white;
+.latest_addition {
   text-align: center;
+  padding: 40px 40px 150px 40px;
+  background-color: white;
+
 }
 
-.latest_additions > .opening {
+.latest_addition > .latest_addition_opener {
   color: #d44420;
   font-family: system-ui;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 45px;
+  padding: 10px;
+  margin-bottom: 150px;
 }
 
-.latest_additions > .container {
+.latest_addition > .latest_items_container {
   display: flex;
-  height: 500px;
+  align-items: center;
+}
+
+.latest_addition > .latest_items_container > .arrow {
+  height: 40px;
+  padding: 100px 10px 100px 10px;
+  border-radius: 10px;
+
+}
+
+.latest_addition > .latest_items_container > .arrow:hover {
   background-color: #a5a5a5;
+  transition: 0.7s;
+
+}
+
+.latest_addition > .latest_items_container > .latest_items {
+  display: flex;
+  /* Takes up all available space */
+  flex-grow: 1;
+  /* Any items outside of the visible ones are hidden */
+  overflow: hidden;
+
+}
+
+.latest_addition > .latest_items_container > .latest_items > .item {
+  text-align: center;
+  flex: 0 0 25%;
+  background-color: #ffffff;
+  
+}
+
+/* FROM Allitems.css = single item */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  flex: 1 0 25%;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+/* END OF SINGLE ITEM CODE */
+
+.ender {
+  display: flex;
+  align-items: center;
+  background-color: #d44420;
+  height: 100px;
+  font-size: 18px;
+  font-family: system-ui;
+  font-weight: 500;
+  /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
+  white-space: nowrap;
+  color: white;
+
 }

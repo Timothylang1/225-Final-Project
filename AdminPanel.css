@@ -1,0 +1,425 @@
+body {
+    margin: 0px;
+    background-color: #F5F5F5;
+}
+
+.container {
+    max-width: 1680px;
+    /* Centers it within body */
+    margin: auto;
+    background-color: white;
+
+    /* IMPORTANT NOTICE HERE: ALL FONTS ARE THE SAME */
+    /* Set font for all items */
+    font-family: system-ui;
+    font-style: normal;
+
+    /* Display set to flex so we can put items side by side */
+    display: flex;
+
+    /* Allows container to fill screen */
+    height: 100vh;
+
+
+}
+
+/* All elements in left_container */
+.left_bar_container {
+    flex: 1 0 15%;
+    background-color: #01426A;
+    color: white;
+
+}
+
+.left_bar_container > .icon_and_admin_text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+
+}
+
+.left_bar_container > .icon_and_admin_text > img {
+    height: 50px;
+    margin: 20px;
+
+}
+
+.left_bar_container > .icon_and_admin_text > p {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 10px;
+
+}
+
+/* This acts like a button, but couldn't include all the properties I wanted to, so turned it into a flexbox instead */
+.left_bar_container > .button {
+    display: flex;
+    align-items: center;
+
+    /* Changes cursor into pointer onhover */
+    cursor: pointer;
+
+    /* Need this to allow the button to be opaque, but keep the text non-opaque */
+    background-color: rgba(159, 162, 180, 0.08);
+
+    border: none;
+    width: 100%;
+    margin: 0px;
+
+}
+
+.left_bar_container > .button:hover {
+    background-color: #D44420;
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+    transition: 0.7s;
+}
+
+.left_bar_container > .button > p {
+    font-size: 15px;
+    margin: 0px;
+}
+
+.left_bar_container > .button > img {
+    margin: 15px 25px;
+}
+
+
+/* End of left_container */
+
+.right_side_container {
+    flex: 1 0 85%;
+    background-color: #F5F5F5;
+}
+
+.right_side_container > .toptopbar {
+    display: flex;
+    align-items: center;
+    margin: 0px 33px;
+
+}
+
+.right_side_container > .toptopbar > .items_label {
+    font-size: 24px;
+    font-weight: 700;
+
+    /* Flex grow pushes the logout button all the way to the right */
+    flex-grow: 1;
+}
+
+.right_side_container > .toptopbar > .logout {
+    width: 100px;
+    height: 30px;
+    background-color: #01426A;
+    color: white;
+    cursor: pointer;
+
+}
+
+.right_side_container > .toptopbar > .logout:hover {
+    background-color: #D44420;
+    border: none;
+}
+
+.right_side_container > .all_items_container {
+    background-color: white;
+    margin: 0px 20px;
+    border: lightgray;
+    border-style: solid;
+    border-radius: 10px;
+
+    height: 86%;
+
+}
+
+/* Everything below is part of the all_items_container */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+
+     /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
+    white-space: nowrap;
+
+    /* Make this position relative so that the dropdown menu's 'absolute positioning' is relative to the topbar they are dropping down from
+    https://stackoverflow.com/questions/10487292/position-absolute-but-relative-to-parent */
+    position: relative;
+
+}
+
+.topbar > .all_items {
+    font-size: 16px;
+    font-weight: 700;
+    flex-grow: 1;
+    padding-left: 20px;
+    margin: 0px;
+
+}
+
+.topbar > .search_bar {
+    padding: 7px 15px;
+    margin-left: 15px;
+    background-color: #C4C4C4;
+    border-style: hidden;
+    border-radius: 40px;
+}
+
+.sort_and_filter {
+    display: flex;
+
+    /* Aligns items along horizontal axis and vertical axis to be in the center */
+    justify-content: center;
+    align-items: center;
+
+    padding: 0px 5px 5px 5px;
+    margin-top: 5px;
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+.sort_and_filter > img {
+    height: 15px;
+    padding: 5px;
+
+}
+
+/* These next parts are for the dropdown menus of the sort and filter */
+
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+
+    background-color: white;
+
+    display: none;
+    padding: 10px;
+
+    font-size: 11px;
+
+}
+
+.menu > .sort_filter_selector {
+    display: flex;
+    align-items: center;
+
+}
+
+.menu > .sort_filter_selector > p {
+    margin: 0px;
+}
+
+/* END OF MENU OPTIONS */
+
+/* Adds filler for top bar for helping aligning items, nothing else */
+.topbar > .filler {
+    width: 20px;
+
+}
+
+/* This section is setting up alignment of menu dropdown + work on hover functionality */
+
+.topbar > .sort {
+    position: relative;
+}
+
+.sort:hover .menu {
+    background-color: lightblue;
+    display: block;
+}
+
+/* Split hover of image */
+.sort:hover > .sort_and_filter > img {
+    filter: brightness(20%);
+
+}
+
+.sort:hover > .sort_and_filter {
+    background-color: lightblue;
+
+}
+
+.topbar > .filter {
+    position: relative;
+}
+
+.filter:hover .menu {
+    background-color: lightblue;
+    display: block;
+}
+
+/* Split hover of image */
+.filter:hover > .sort_and_filter > img {
+    filter: brightness(20%);
+
+}
+
+.filter:hover > .sort_and_filter {
+    background-color: lightblue;
+
+}
+
+/* END OF ALIGNING SECTION FOR MENU */
+
+.items_container {
+    padding: 0px 10px;
+    overflow: hidden;
+    height: 90%;
+    width: 97%;
+    overflow-y: auto;
+
+    /* Needed to asign div's flex order for rearranging with filter */
+    display: flex;
+    flex-direction: column;
+}
+
+.items_container > .column_label {
+    color: #9FA2B4;
+    display: flex;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 0px 20px;
+
+    order: 0;
+
+}
+
+.items_container > .column_label > .img_label {
+    flex: 0 0 25%;
+
+}
+
+.items_container > .column_label > .name_label {
+    flex: 0 0 15%;
+
+}
+
+.items_container > .column_label > .description_label {
+    flex: 0 0 30%;
+
+}
+
+.items_container > .column_label > .type_label {
+    flex: 0 0 10%;
+    
+}
+
+.items_container > .column_label > .date_label {
+    flex: 0 0 10%;
+    
+}
+
+.items_container > .column_label > .delete_label {
+    flex: 0 0 10%;
+    
+}
+
+/* SINGLE LINE DESIGNATED HERE */
+
+.items_container > .single_item {
+    display: flex;
+    padding: 15px 20px;
+
+    /* Border */
+    border: #9FA2B4;
+    border-top-width: 5px;
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+
+}
+
+.items_container > .single_item > .image {
+    flex: 0 0 25%;
+    display: flex;
+    align-items: center;
+
+}
+
+.items_container > .single_item > .image > img {
+    /* Image determines height of each item */
+    height: 65px;
+    margin: 0px 30px 0px 0px;
+}
+
+.items_container > .single_item > .name {
+    flex: 0 0 15%;
+}
+
+.items_container > .single_item > .name > p{
+    margin: 0px 20px 0px 0px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.items_container > .single_item > .description {
+    flex: 0 0 30%;
+
+}
+
+.items_container > .single_item > .description > p {
+    font-size: 15px;
+    margin: 0px 40px 0px 0px;
+
+}
+
+.items_container > .single_item > .type {
+    flex: 0 0 10%;
+    
+}
+
+.items_container > .single_item > .type > p {
+    font-size: 15px;
+    margin: 0px 10px 0px 0px;
+    
+}
+
+.items_container > .single_item > .date {
+    flex: 0 0 10%;
+    
+}
+
+.items_container > .single_item > .date > .main_date {
+    font-size: 13px;
+    margin: 0px 10px 0px 0px;
+    
+}
+
+.items_container > .single_item > .date > .time_stamp {
+    margin: 0px 10px 0px 0px;
+    color: #9FA2B4;
+    font-size: 11px;
+    
+     /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
+     white-space: nowrap;
+    
+}
+
+.items_container > .single_item > .delete {
+    flex: 0 0 10%;
+    color: white;
+    background-color: #D44420;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 0px;
+    height: 35px;
+
+    cursor: pointer;
+    
+}
+
+.items_container > .single_item > .delete:hover {
+    background-color: #F66642;
+    color: black;
+    font-weight: bold;
+    transition: 0.7s;
+}
+
+/* END OF SINGLE LINE */
+
+/* END OF all_items_container */

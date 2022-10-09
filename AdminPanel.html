@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- index.html will always be the first file the browser opens -->
+<html lang="en-US">
+
+<head>
+    <!-- Includes information about website -->
+    <title>
+        Admin Page
+    </title>
+    <meta charset="utf-8"> <!-- IMPORTANT TO ADD THIS LINE -->
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <!-- allows website to be displayed correctly on mobile devices -->
+    <meta name="author" content="Timothy Lang">
+    <meta name="description" content="A website to host Free Swap">
+    <meta name="keywords" content="Macalester, free swap">
+
+    <!-- Folder that will determine css stylings -->
+    <link rel="stylesheet" href="AdminPanel.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="left_bar_container">
+            <div class="icon_and_admin_text">
+                <img src="public/images/icon.png" alt="">
+                <p>Free Swap Admin</p>
+            </div>
+            <div class="button">
+                <img src="public/images/side_button.png" alt="">
+                <p>All Items</p>
+            </div>
+            <div class="button">
+                <img src="public/images/side_button.png" alt="">
+                <p>New Items</p>
+            </div>
+        </div>
+        <div class="right_side_container">
+            <div class="toptopbar">
+                <p class="items_label">Items</p>
+                <button class="logout">LOGOUT</button>
+            </div>
+            <div class="all_items_container">
+                <div class="topbar">
+                    <p class="all_items">All Items</p>
+                    <!-- NEED TO CHANGE LOCATION OF PNG'S ONCE IMPLEMENTED INTO MAIN FRAME -->
+                    <div class="sort">
+                        <!-- Drop down menu is made up of three divs (the hover, the border, and the actualy menu) -->
+                        <div class="sort_and_filter">
+                            <img src="public/images/sort.png" alt="">
+                            <p>Sort</p>
+                        </div>
+                        <div class="menu">
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="sorting_method('Item_Type_Sort')">
+                                <p>Item Type</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="sorting_method('Alphabetical_Sort')">
+                                <p>Alphabetical Order</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="sorting_method('Date_Sort')">
+                                <p>Date Added</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <div class="sort_and_filter">
+                            <img src="public/images/filter.png" alt="">
+                            <p>Filter</p>
+                        </div>
+                        <div class="menu">
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Shirts')">
+                                <p>Shirts</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Shorts')">
+                                <p>Shorts</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Shoes')">
+                                <p>Shoes</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Books')">
+                                <p>Books</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('House Items')">
+                                <p>House Items</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Other')">
+                                <p>Other</p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="Search" placeholder="Search" class="search_bar"/>
+                    <div class="filler"></div>
+                </div>
+                <div class="items_container">
+                    <div class="column_label">
+                        <p class="img_label">Image</p>
+                        <p class="name_label">Name</p>
+                        <p class="description_label">Description</p>
+                        <p class="type_label">Type</p>
+                        <p class="date_label">Date Added</p>
+                        <p class="delete_label">Delete Item</p>
+                    </div>
+                    <div class="single_item" id="0">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shirts</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 30, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="1">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Shorts</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>House Items</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 29, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="2">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Shirt</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn asfsdf sad fads fasd fdsdasfads fasd fdsasdfasdf asdf sdaf sdafsdfsdfsadfsadf asd fasd fd asd fsdfsfsdaf sd fsd fasdf asd fasd f dasf asdfasdf sdaf asd</p>
+                        </div>
+                        <div class="type">
+                            <p>Shirts</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 28, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+                    <div class="single_item" id="3">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 27, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="4">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="5">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 25, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="6">
+                        <div class="image">
+                            <img src="public/images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 24, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Once everything is set up, add in functionality -->
+    <script src="sort_filter_search.js"></script>
+</body>
