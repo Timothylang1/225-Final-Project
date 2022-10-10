@@ -1,17 +1,50 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
+.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
+  padding: 35px;
+  width: 200px;
+  height: 150px;
+  margin-top: 60px;  
+  line-height: 12px;  
+  /* font-weight: bold; */
+  text-align: center;
+  font-family: arial;
+ 
+
+}
+
+ /* .card {
+    font-weight: bold;
+    font-size: 1em;
     text-align: center;
     font-family: arial;
-  }
+  } */
   
-  .price {
+  /* .price {
     color: grey;
-    font-size: 22px;
-  }
+    font-size: 12px;
+  } */
   
-  .card button {
+  /* .card button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -21,19 +54,19 @@
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-  }
+  } */
   
-  .card button:hover {
+  /* .card button:hover {
     opacity: 0.7;
-  }
+  } */
 
 /* .flip-card {
     background-color: transparent;
     width: 300px;
     height: 200px;
     border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
+    perspective: 1000px; /* Remove this if you don't want the 3D effect
+  } */
   
   /* This container is needed to position the front and back side
   .flip-card-inner {
