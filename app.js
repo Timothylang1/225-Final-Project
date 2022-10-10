@@ -6,10 +6,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const path = require("path");
 const bodyParser = require("body-parser");
+const fs = require("fs");
+var multer = require("multer");
 
 app.use(express.static(__dirname + "/public"));
 app.set("views", __dirname + "/public/views");
 app.set("view engine", "ejs");
+app.use("/uploads", express.static("uploads"));
 
 app.use(
   bodyParser.urlencoded({
@@ -17,7 +20,6 @@ app.use(
   })
 );
 
-app.use(bodyParser.json());
 app.use(bodyParser.raw());
 app.use(bodyParser.text());
 app.use(bodyParser.json());
@@ -50,6 +52,31 @@ function createItem(name, description) {
   return newItem;
 }
 
+let imageSchema = new mongoose.Schema({
+  name: String,
+  desc: String,
+  img: {
+    data: Buffer,
+    contentType: String,
+  },
+});
+
+//Image is a model which has a schema imageSchema
+
+let imgModel = new mongoose.model("Image", imageSchema);
+
+let storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + "-" + Date.now());
+  },
+});
+
+let upload = multer({ storage: storage });
+
+// Routing 🐍
 app
   .route("/")
   .get((req, res) => {
@@ -71,19 +98,38 @@ app.route("/all-items").get((req, res) => {
   res.render("all-items");
 });
 
-app
-  .route("/testing-database")
-  .get(async (req, res) => {
-    let items = await Item.find({});
-    res.render("testing-database", { items });
-  })
-  .post((req, res) => {
-    let name = req.body.Name;
-    let description = req.body.description;
-    let newItem = createItem(name, description);
-    newItem.save();
-    res.render("success", { name, description });
+app.get("/upload-image", (req, res) => {
+  res.render("upload-image");
+});
+app.post("/upload-image", upload.single("image"), (req, res, next) => {
+  let obj = {
+    name: req.body.name,
+    desc: req.body.desc,
+    img: {
+      data: fs.readFileSync(
+        path.join(__dirname + "/uploads/" + req.file.filename)
+      ),
+      contentType: "image/png",
+    },
+  };
+
+  imgModel.create(obj, (err, item) => {
+    if (err) {
+      console.log(err);
+    } else {
+      // grab all images and render them
+      imgModel.find({}, (err, items) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send("An error occurred", err);
+        } else {
+          fs.unlinkSync(path.join(__dirname + "/uploads/" + req.file.filename));
+          res.render("uploaded-images", { items });
+        }
+      });
+    }
   });
+});
 
 app.route("/delete/:id").get((req, res) => {
   const id = req.params.id;
