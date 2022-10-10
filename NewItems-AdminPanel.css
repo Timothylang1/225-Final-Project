@@ -132,5 +132,64 @@ body {
     height: 86%;
 
 }
+.all_items_container{
+    position: relative;
+    width: 600px;
+    height: 50px;
+    left: 300px;
+    top: 10px;
+    
+}
+.new_items_info{
+         border: none;
+         background: none;
+         padding: 150px;
+         padding-left: 200px;
+         font-weight: 700;
+         width: 105%;
+         position: relative;
+         
 
-
+}
+.image__submit {
+    background: navy;
+    font-size: 14px;
+    margin-top: 30px;
+    padding: 16px 20px;
+    border-radius: 26px;
+    border: 1px solid #D4D3E8;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    color: white;
+    cursor: pointer;
+    margin-left: 100px;
+}
+.final__submit {
+    background: #D44420;
+    font-size: 10px;
+    margin-top: 30px;
+    padding: 16px 20px;
+    border-radius: 26px;
+    border: 1px solid #D4D3E8;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    width: 13%;
+    color: white;
+    cursor: pointer;
+    margin-left: 100px;
+}
+.Name{
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+    background: none;
+    padding: 10px;
+    padding-left: 34px;
+    font-weight: 700;
+    width: 75%;
+    transition: .2s;
+}
