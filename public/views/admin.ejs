@@ -5,7 +5,7 @@
 <head>
     <!-- Includes information about website -->
     <title>
-        Example Website
+        Admin Page
     </title>
     <meta charset="utf-8"> <!-- IMPORTANT TO ADD THIS LINE -->
     <meta name="viewport" content="width=device-width, inital-scale=1">
@@ -15,70 +15,240 @@
     <meta name="keywords" content="Macalester, free swap">
 
     <!-- Folder that will determine css stylings -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/loginstyle.css">
+    <link rel="stylesheet" href="css/admin.css">
 
 </head>
-
 <body>
     <div class="container">
-        <!-- Just a div, but exclusively for navigation bar at the top of the screen. Used by Google to help with search engine -->
-        <nav class="navigation_bar">
-            <div class="left_bar font">
-                <!-- alt = alternate text shown if the image can't be displayed -->
-                <img src="images/icon.png" alt="" height="65" class="icon">
-                <!-- Table for div is to help center the text in it to be in the middle of the div -->
-                <p>
-                    Free Swap
-                </p>
+        <div class="left_bar_container">
+            <div class="icon_and_admin_text">
+                <img src="images/icon.png" alt="">
+                <p>Free Swap Admin</p>
             </div>
-            <div class="middle_bar">
-                <button type="button" onclick="location.href = '/';" class="middle_items font">Home</button>
-                <button type="button" onclick="location.href = '/about';" class="middle_items font">About</button>
-                <button type="button" onclick="location.href = '/admin';" class="middle_items font">Admin</button>
-                <button type="button" onclick="location.href = '/all-items';" class="middle_items font">All
-                    Items</button>
+            <div class="button">
+                <img src="images/side_button.png" onclick="location.href = '/admin';" alt="">
+                <p>All Items</p>
             </div>
-            <input type="Search" placeholder="Search" class="font search_bar">
-        </nav>
-        <div class="container">
-            <div class="screen">
-                <div class="screen__content">
-                    <form class="login">
-                        <div class="login__field">
-                            <i class="login__icon fas fa-user"></i>
-                            <input type="text" class="login__input" placeholder="User name / Email">
+            <div class="button" onclick="location.href = '/admin-newitem';">
+                <img src="images/side_button.png" alt="">
+                <p>New Items</p>
+            </div>
+        </div>
+        <div class="right_side_container">
+            <div class="toptopbar">
+                <p class="items_label">Items</p>
+                <button onclick="location.href = '/';" class="logout">LOGOUT</button>
+            </div>
+            <div class="all_items_container">
+                <div class="topbar">
+                    <p class="all_items">All Items</p>
+                    <div class="sort">
+                        <!-- Drop down menu is made up of three divs (the hover, the border, and the actualy menu) -->
+                        <div class="sort_and_filter">
+                            <img src="images/sort.png" alt="">
+                            <p>Sort</p>
                         </div>
-                        <div class="login__field">
-                            <i class="login__icon fas fa-lock"></i>
-                            <input type="password" class="login__input" placeholder="Password">
+                        <div class="menu">
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="sorting_method('Item_Type_Sort')">
+                                <p>Item Type</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="sorting_method('Alphabetical_Sort')">
+                                <p>Alphabetical Order</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="sorting_method('Date_Sort')">
+                                <p>Date Added</p>
+                            </div>
                         </div>
-                        <button class="button login__submit">
-                            <span class="button__text">Log In Now</span>
-                            <i class="button__icon fas fa-chevron-right"></i>
-                        </button>
-                    </form>
-
+                    </div>
+                    <div class="filter">
+                        <div class="sort_and_filter">
+                            <img src="images/filter.png" alt="">
+                            <p>Filter</p>
+                        </div>
+                        <div class="menu">
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Shirts')">
+                                <p>Shirts</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Shorts')">
+                                <p>Shorts</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Shoes')">
+                                <p>Shoes</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Books')">
+                                <p>Books</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('House Items')">
+                                <p>House Items</p>
+                            </div>
+                            <div class="sort_filter_selector">
+                                <input type="checkbox" id="" onchange="filter('Other')">
+                                <p>Other</p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="Search" placeholder="Search" class="search_bar"/>
+                    <div class="filler"></div>
                 </div>
-                <div class="screen__background">
-                    <span class="screen__background__shape screen__background__shape4"></span>
-                    <span class="screen__background__shape screen__background__shape3"></span>
-                    <span class="screen__background__shape screen__background__shape2"></span>
-                    <span class="screen__background__shape screen__background__shape1"></span>
+                <div class="items_container">
+                    <div class="column_label">
+                        <p class="img_label">Image</p>
+                        <p class="name_label">Name</p>
+                        <p class="description_label">Description</p>
+                        <p class="type_label">Type</p>
+                        <p class="date_label">Date Added</p>
+                        <p class="delete_label">Delete Item</p>
+                    </div>
+                    <div class="single_item" id="0">
+                        <div class="image">
+                            <img src="images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shirts</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 30, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="1">
+                        <div class="image">
+                            <img src="images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Shorts</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>House Items</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 29, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="2">
+                        <div class="image">
+                            <img src="images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Shirt</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn asfsdf sad fads fasd fdsdasfads fasd fdsasdfasdf asdf sdaf sdafsdfsdfsadfsadf asd fasd fd asd fsdfsfsdaf sd fsd fasdf asd fasd f dasf asdfasdf sdaf asd</p>
+                        </div>
+                        <div class="type">
+                            <p>Shirts</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 28, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+                    <div class="single_item" id="3">
+                        <div class="image">
+                            <img src="images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 27, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="4">
+                        <div class="image">
+                            <img src="images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 26, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="5">
+                        <div class="image">
+                            <img src="images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 25, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                    <div class="single_item" id="6">
+                        <div class="image">
+                            <img src="images/sample1.png" alt="">
+                        </div>
+                        <div class="name">
+                            <p>Sneakers</p>
+                        </div>
+                        <div class="description">
+                            <p>Red sneakers, slightly worn</p>
+                        </div>
+                        <div class="type">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="date">
+                            <p class="main_date">May 24, 2020</p>
+                            <p class="time_stamp">6:30 am</p>
+                        </div>
+                        <button class="delete">Delete</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- <form>
-                <div class = "login_page">
-                <p style="font-family:Barlow ; color:#D44420; font-size: 50px; position: absolute; top: 150px; left: 630px">Admin Login</p>
-                <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" >
-                <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-                <input type="submit" value="Login" id="login-form-submit">
-            </form> -->
-        <!-- <img src="images/scot.png" alt="" height="200" 
-                 style="position:absolute; top:0px; right:40px ; width:500px; height:550px; border:none;" > -->
     </div>
-    </div>
+    <!-- Once everything is set up, add in functionality -->
+    <script src="javascript/sort_filter_search.js"></script>
 </body>
-
-</html>

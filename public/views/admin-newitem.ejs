@@ -15,29 +15,29 @@
     <meta name="keywords" content="Macalester, free swap">
 
     <!-- Folder that will determine css stylings -->
-    <link rel="stylesheet" href="NewItems-AdminPanel.css">
+    <link rel="stylesheet" href="css/admin-newitem.css">
 
 </head>
 <body>
     <div class="container">
         <div class="left_bar_container">
             <div class="icon_and_admin_text">
-                <img src="public/images/icon.png" alt="">
+                <img src="images/icon.png" alt="">
                 <p>Free Swap Admin</p>
             </div>
-            <div class="button">
-                <img src="public/images/side_button.png" alt="">
+            <div onclick="location.href = '/admin';" class="button">
+                <img src="images/side_button.png" alt="">
                 <p>All Items</p>
             </div>
-            <div class="button">
-                <img src="public/images/side_button.png" alt="">
+            <div class="button" onclick="location.href = '/admin-newitem';">
+                <img src="images/side_button.png" alt="">
                 <p>New Items</p>
             </div>
         </div>
         <div class="right_side_container">
             <div class="toptopbar">
                 <p class="items_label">Items</p>
-                <button class="logout">LOGOUT</button>
+                <button onclick="location.href = '/';" class="logout">LOGOUT</button>
             </div>
             <div class="all_items_container">
         <!-- add stuf ehere -->

@@ -90,12 +90,20 @@ app.route("/about").get((req, res) => {
   res.render("about");
 });
 
+app.route("/login").get((req, res) => {
+  res.render("login");
+});
+
 app.route("/admin").get((req, res) => {
   res.render("admin");
 });
 
 app.route("/all-items").get((req, res) => {
   res.render("all-items");
+});
+
+app.route("/admin-newitem").get((req, res) => {
+  res.render("admin-newitem");
 });
 
 app.get("/upload-image", (req, res) => {
