@@ -154,7 +154,11 @@ app.route("/all-items").get((req, res) => {
 });
 
 app.route("/admin-newitem").get((req, res) => {
-  res.render("admin-newitem");
+  if (req.isAuthenticated()) {
+    res.render("admin-newitem");
+  } else {
+    res.redirect("/login");
+  }
 });
 
 app.get("/upload-image", (req, res) => {
