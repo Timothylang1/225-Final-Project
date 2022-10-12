@@ -7,7 +7,11 @@ const Schema = mongoose.Schema;
 const path = require("path");
 const bodyParser = require("body-parser");
 const fs = require("fs");
-var multer = require("multer");
+const session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
+let multer = require("multer");
+const { deserializeUser } = require("passport");
 
 app.use(express.static(__dirname + "/public"));
 app.set("views", __dirname + "/public/views");
@@ -23,6 +27,16 @@ app.use(
 app.use(bodyParser.raw());
 app.use(bodyParser.text());
 app.use(bodyParser.json());
+app.use(
+  session({
+    secret: "change this",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 mongoose.connect(
   "mongodb+srv://freeswapadmin:cafemacisgreat@freeswap.nx7crsb.mongodb.net/?retryWrites=true&w=majority",
@@ -60,7 +74,13 @@ const userSchema = mongoose.Schema({
   password: String,
 });
 
+userSchema.plugin(passportLocalMongoose);
+
 let User = DB.model("User", userSchema);
+
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // Multer setup
 
@@ -89,12 +109,35 @@ app.route("/about").get((req, res) => {
   res.render("about");
 });
 
-app.route("/login").get((req, res) => {
-  res.render("login");
-});
+app
+  .route("/login")
+  .get((req, res) => {
+    res.render("login");
+  })
+  .post((req, res) => {
+    const user = new User({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    req.login(user, (err) => {
+      if (err) {
+        console.log(err);
+        res.redirect("/");
+      } else {
+        // I think this is not working because the password in the DB is not encrypted. I might need a sign up page that allows Passport to dycrpt when saving to the DB
+        passport.authenticate("local")(req, res, () => {
+          res.redirect("/admin");
+        });
+      }
+    });
+  });
 
 app.route("/admin").get((req, res) => {
-  res.render("admin");
+  if (req.isAuthenticated()) {
+    res.render("admin");
+  } else {
+    res.redirect("/login");
+  }
 });
 
 app.route("/all-items").get((req, res) => {
@@ -147,3 +190,18 @@ app.route("/delete/:id").get((req, res) => {
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
+
+// code for creating new user
+
+/* 
+
+User.register({ username: req.body.username }, req.body.password , (err, user) => {
+      if (err) {
+        console.log(err);
+        res.redirect("/login");
+      } else {
+        console.log("new user made" + user);
+        res.redirect("/login");
+      }
+    });
+*/
