@@ -35,7 +35,7 @@ mongoose.connect(
 // Chooses which DB tp save to
 const DB = mongoose.connection.useDb("freeswap");
 
-// Creating bug schema and Model 📝
+// Models
 
 const itemSchema = mongoose.Schema({
   name: String,
@@ -43,14 +43,6 @@ const itemSchema = mongoose.Schema({
 });
 
 const Item = DB.model("item", itemSchema, "items");
-
-function createItem(name, description) {
-  const newItem = new Item({
-    name: name,
-    description: description,
-  });
-  return newItem;
-}
 
 let imageSchema = new mongoose.Schema({
   name: String,
@@ -61,9 +53,16 @@ let imageSchema = new mongoose.Schema({
   },
 });
 
-//Image is a model which has a schema imageSchema
+let imgModel = DB.model("Image", imageSchema);
 
-let imgModel = new mongoose.model("Image", imageSchema);
+const userSchema = mongoose.Schema({
+  username: String,
+  password: String,
+});
+
+let User = DB.model("User", userSchema);
+
+// Multer setup
 
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
