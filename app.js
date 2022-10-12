@@ -132,6 +132,15 @@ app
     });
   });
 
+app.route("/logout").get((req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.redirect("/");
+  });
+});
+
 app.route("/admin").get((req, res) => {
   if (req.isAuthenticated()) {
     res.render("admin");
