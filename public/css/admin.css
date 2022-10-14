@@ -113,13 +113,16 @@ body {
     height: 30px;
     background-color: #01426A;
     color: white;
+    border: none;
     cursor: pointer;
 
 }
 
 .right_side_container > .toptopbar > .logout:hover {
-    background-color: #D44420;
-    border: none;
+    /* background-color: #D44420 var(0%, 100%)/200% no-repeat; */
+    /* background-clip: text; */
+    border-radius: 25px;
+    transition: 0.7s;
 }
 
 .right_side_container > .all_items_container {

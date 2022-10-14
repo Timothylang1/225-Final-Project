@@ -1,46 +1,5 @@
-<!DOCTYPE html>
-<!-- index.html will always be the first file the browser opens -->
-<html lang="en-US">
+<%- include('partials/adminsidebars') %>
 
-<head>
-    <!-- Includes information about website -->
-    <title>
-        Admin Page
-    </title>
-    <meta charset="utf-8"> <!-- IMPORTANT TO ADD THIS LINE -->
-    <meta name="viewport" content="width=device-width, inital-scale=1">
-    <!-- allows website to be displayed correctly on mobile devices -->
-    <meta name="author" content="Timothy Lang">
-    <meta name="description" content="A website to host Free Swap">
-    <meta name="keywords" content="Macalester, free swap">
-
-    <!-- Folder that will determine css stylings -->
-    <link rel="stylesheet" href="css/admin.css">
-
-</head>
-
-<body>
-    <div class="container">
-        <div class="left_bar_container">
-            <div class="icon_and_admin_text">
-                <img src="images/icon.png" alt="">
-                <p>Free Swap Admin</p>
-            </div>
-            <div class="button">
-                <img src="images/side_button.png" onclick="location.href = '/admin';" alt="">
-                <p>All Items</p>
-            </div>
-            <div class="button" onclick="location.href = '/admin-newitem';">
-                <img src="images/side_button.png" alt="">
-                <p>New Items</p>
-            </div>
-        </div>
-        <div class="right_side_container">
-            <div class="toptopbar">
-                <p class="items_label">Items</p>
-                <button onclick="location.href = '/logout';" class="logout">LOGOUT</button>
-            </div>
-            <div class="all_items_container">
                 <div class="topbar">
                     <p class="all_items">All Items</p>
                     <div class="sort">
