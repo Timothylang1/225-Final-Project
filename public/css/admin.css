@@ -108,21 +108,34 @@ body {
     flex-grow: 1;
 }
 
-.right_side_container > .toptopbar > .logout {
+.right_side_container > .toptopbar > button {
     width: 100px;
-    height: 30px;
-    background-color: #01426A;
+    height: 40px;
+    /* background-color: #01426A; */
+    background: linear-gradient(
+        to right, 
+        #01426A 0%,
+        #01426A 40%,
+        #D44420 60%,
+        #D44420 100%);
+    background-size: 250% 100%;
     color: white;
     border: none;
     cursor: pointer;
 
+    margin-right: 10px;
+
+    /* Transition in here so that it works both on hover and not */
+    transition: 0.7s;
+
 }
 
-.right_side_container > .toptopbar > .logout:hover {
-    /* background-color: #D44420 var(0%, 100%)/200% no-repeat; */
-    /* background-clip: text; */
+.right_side_container > .toptopbar > button:hover {
     border-radius: 25px;
-    transition: 0.7s;
+    color: black;
+    background-position-x: 100%;
+    font-weight: 700;
+
 }
 
 .right_side_container > .all_items_container {
