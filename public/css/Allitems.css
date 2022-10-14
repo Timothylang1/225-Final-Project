@@ -1,26 +1,9 @@
 
-.container {
-  max-width: 1680px;
-  /* Centers it within body */
-  margin: auto;
-  background-color: white;
-
-  /* IMPORTANT NOTICE HERE: ALL FONTS ARE THE SAME */
-  /* Set font for all items */
-  font-family: system-ui;
-  font-style: normal;
-  
-
-  /* Allows container to fill screen */
-  height: 100vh;
-
-
-}
-
 .flex-container {
   flex: 1 0 80%;
   /* We first create a flex layout context */
   display: flex;
+  background-color: white;
   
   /* Then we define the flow direction 
      and if we allow the items to wrap 
