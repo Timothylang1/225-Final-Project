@@ -1,4 +1,24 @@
+
+.container {
+  max-width: 1680px;
+  /* Centers it within body */
+  margin: auto;
+  background-color: white;
+
+  /* IMPORTANT NOTICE HERE: ALL FONTS ARE THE SAME */
+  /* Set font for all items */
+  font-family: system-ui;
+  font-style: normal;
+  
+
+  /* Allows container to fill screen */
+  height: 100vh;
+
+
+}
+
 .flex-container {
+  flex: 1 0 80%;
   /* We first create a flex layout context */
   display: flex;
   
@@ -19,6 +39,7 @@
 }
 
 .flex-item {
+  
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
   padding: 35px;
   width: 200px;
@@ -32,75 +53,42 @@
 
 }
 
- /* .card {
-    font-weight: bold;
-    font-size: 1em;
-    text-align: center;
-    font-family: arial;
-  } */
-  
-  /* .price {
-    color: grey;
-    font-size: 12px;
-  } */
-  
-  /* .card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-  } */
-  
-  /* .card button:hover {
-    opacity: 0.7;
-  } */
+/* All elements in left_container */
+.left_bar_container {
+  flex: 1 0 20%;
+  background-color: #01426A;
+  color: white;
 
-/* .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect
-  } */
-  
-  /* This container is needed to position the front and back side
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  } */
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  /* .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  /* Position the front and back side */
-  /* .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    /* backface-visibility: hidden;
-  } */ 
-   
-  /* Style the front side (fallback if image is missing) */
-  /* .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  } */
-  
-  /* Style the back side */
-  /* .flip-card-back {
-    background-color: #01426A;
-    color: white;
-    transform: rotateY(180deg);
-  } */ 
+}
+
+.left_bar_container > .icon_and_admin_text > img {
+  height: 50px;
+  margin: 20px;
+
+}
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.container:hover .overlay {
+  opacity: 1;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;cf
+  color: white;
+  font-size: 20px; 
+  text-align: center;
+}
+
