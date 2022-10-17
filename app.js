@@ -149,8 +149,18 @@ app.route("/admin").get((req, res) => {
   }
 });
 
-app.route("/all-items").get((req, res) => {
-  res.render("all-items");
+app.route("/all-items").get(async (req, res) => {
+  imgModel.find({}, (err, items) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("An error occurred", err);
+    } else {
+      console.log("====================================");
+      console.log(items);
+      console.log("====================================");
+      res.render("all-items", { items });
+    }
+  });
 });
 
 app.route("/admin-newitem").get((req, res) => {
