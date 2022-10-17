@@ -100,7 +100,14 @@ let upload = multer({ storage: storage });
 app
   .route("/")
   .get((req, res) => {
-    res.render("home");
+    imgModel.find({}, (err, items) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("An error occurred", err);
+      } else {
+        res.render("home", { items });
+      }
+    });
   })
   .post((req, res) => {
     res.render("home");
@@ -155,9 +162,6 @@ app.route("/all-items").get(async (req, res) => {
       console.log(err);
       res.status(500).send("An error occurred", err);
     } else {
-      console.log("====================================");
-      console.log(items);
-      console.log("====================================");
       res.render("all-items", { items });
     }
   });
