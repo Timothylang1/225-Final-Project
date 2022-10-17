@@ -61,6 +61,7 @@ const Item = DB.model("item", itemSchema, "items");
 let imageSchema = new mongoose.Schema({
   name: String,
   desc: String,
+  type: String,
   img: {
     data: Buffer,
     contentType: String,
@@ -124,7 +125,6 @@ app
         console.log(err);
         res.redirect("/");
       } else {
-        // I think this is not working because the password in the DB is not encrypted. I might need a sign up page that allows Passport to dycrpt when saving to the DB
         passport.authenticate("local")(req, res, () => {
           res.redirect("/admin");
         });
@@ -168,6 +168,7 @@ app.post("/upload-image", upload.single("image"), (req, res, next) => {
   let obj = {
     name: req.body.name,
     desc: req.body.desc,
+    type: req.body.type,
     img: {
       data: fs.readFileSync(
         path.join(__dirname + "/uploads/" + req.file.filename)
