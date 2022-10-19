@@ -1,19 +1,14 @@
 .all_items_container{
     position: relative;
-    width: 600px;
-    height: 50px;
-    left: 300px;
-    top: 10px;
-    
+    align-items: center;
+    width: fit-content;
 }
+
 .new_items_info{
          border: none;
          background: none;
-         padding: 150px;
-         padding-left: 200px;
          font-weight: 700;
-         width: 105%;
-         position: relative;
+         margin: 20px;
          
 }
 
@@ -56,24 +51,21 @@
 }
 
 .image-submit{
-left: 500px;
-margin-top:30px;
+    margin-top:30px;
 }
 
 .final__submit {
     background: #D44420;
     font-size: 15px;
     margin-top: 30px;
-    padding: 16px 20px;
+    padding: 16px 0px;
     border-radius: 26px;
     border: 1px solid #D4D3E8;
     text-transform: uppercase;
     font-weight: 900;
-    display: flex;
-    align-items: center;
-    width: 23%;
     color: white;
     cursor: pointer;
-    margin-left: 10px;
+    width: 100%;
+    
 }
 
