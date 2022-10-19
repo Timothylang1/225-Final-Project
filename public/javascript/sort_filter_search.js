@@ -19,12 +19,11 @@ filters_dict = {"Shoes" : false, "Shirts" : false, "Pants" : false, "Toiletries"
 order = document.getElementsByClassName("single_item");
 order = Array.from(order);
 
-
 // Shared methods
 
 // Gets attribute from innnerhtml
 function getAttributeText(element, attribute) {
-    return element.getElementsByClassName(attribute)[0].getElementsByTagName("p")[0].innerText;
+    return element.getElementsByClassName(attribute)[0].innerText;
 
 }
 
@@ -59,7 +58,7 @@ function sorting_method(type) {
 // Sorts by priority: first is type, then name, then date
 function item_type_sort(element1, element2) {
     if (Item_Type_Sort) {
-        dif = compare(getAttributeText(element1, "type_label"), getAttributeText(element2, "type_label"));
+        dif = compare(getAttributeText(element1, "type"), getAttributeText(element2, "type"));
         if (dif == 0) {
             return alpahabet_type_sort(element1, element2);
         }
@@ -70,7 +69,7 @@ function item_type_sort(element1, element2) {
 
 function alpahabet_type_sort(element1, element2) {
     if (Alphabetical_Sort) {
-        dif = compare(getAttributeText(element1, "name_label"), getAttributeText(element2, "name_label"));
+        dif = compare(getAttributeText(element1, "name"), getAttributeText(element2, "name"));
         if (dif == 0) {
             return date_type_sort(element1, element2);
         }
@@ -87,9 +86,8 @@ function date_type_sort(element1, element2) {
 }
 
 function getDate(element) {
-    dates = element.getElementsByClassName("date_label")[0];
-    month_day_year = dates.getElementsByClassName("main_date")[0].innerText;
-    time = dates.getElementsByClassName("time_stamp")[0].innerText;
+    month_day_year = element.getElementsByClassName("main_date")[0].innerText;
+    time = element.getElementsByClassName("time_stamp")[0].innerText;
     return new Date(month_day_year + " " + time);
 }
 
@@ -114,9 +112,9 @@ function filter(type) {
     searchtext = searchInput.value.toLowerCase(); // Gets text from searchbar, lowercase everything so searchbar is less case sensitive
 
     order.forEach(element => {
-        let name = getAttributeText(element, "name_label");
-        let description = getAttributeText(element, "description_label");
-        let type = getAttributeText(element, "type_label");
+        let name = getAttributeText(element, "name");
+        let description = getAttributeText(element, "description");
+        let type = getAttributeText(element, "type");
         let date = getDate(element).toDateString().substring(4); // Only include month, day and year
     
         if ((name.toLowerCase().includes(searchtext) || 
