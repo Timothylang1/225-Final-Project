@@ -80,7 +80,7 @@
 /* Some stylings based off of middle_items from styles.css */
 
 .shortcut_line > .middle_items {
-  flex-basis: 17%;
+  flex-basis: 15%;
   margin: 0;
 
   /* Declaring all font options */
@@ -88,6 +88,10 @@
   font-size: 18px;
   font-family: system-ui;
   font-weight: 500;
+
+  /* Doesn't allow text to wrap around */
+  white-space: nowrap;
+  
 }
 
 .shortcut_line > .middle_items:hover {
@@ -109,6 +113,8 @@
   font-weight: 500;
   line-height: 15px;
   text-align: center;
+  white-space: nowrap;
+
 }
 
 .latest_addition {

@@ -13,8 +13,7 @@
 */
 
 // Set filters:
-filters_dict = {"Shirts" : false, "Shorts" : false, "Shoes" : false, "Books" : false, "House Items" : false, "Other" : false};
-
+filters_dict = {"Shoes" : false, "Shirts" : false, "Pants" : false, "Toiletries" : false, "House Items" : false, "Seasonal" : false, "Other" : false};
 
 // Initial order of elements
 order = document.getElementsByClassName("single_item");

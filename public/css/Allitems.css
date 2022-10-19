@@ -39,14 +39,23 @@
 .left_bar_container {
   flex: 1 0 20%;
   background-color: #01426A;
-  color: white;
 
 }
 
-.left_bar_container > .icon_and_admin_text > img {
-  height: 50px;
-  margin: 20px;
+.left_bar_container > .menu {
+  padding: 10px;
+  font-size: 11px;
 
+}
+
+.left_bar_container > .menu > .sort_filter_selector {
+  display: flex;
+  align-items: center;
+
+}
+
+.left_bar_container > .menu > .sort_filter_selector > p {
+  margin: 0px;
 }
 
 .flip-card {
