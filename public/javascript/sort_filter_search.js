@@ -25,7 +25,8 @@ if (urlParams.has('filter')) {
     document.getElementById(input_filter).checked = true;
 }
 if (urlParams.has('search')) {
-    const input_search = urlParams.get('serach');
+    const input_search = urlParams.get('search');
+    document.getElementsByClassName('search_bar')[0].value = input_search;
 }
 
 
@@ -149,6 +150,7 @@ function any_filters_set() {
 }
 
 // Event listeners
+
 
 // Add in event listener for when the little x button is pressed on search
 searchInput.addEventListener("search", function() {
