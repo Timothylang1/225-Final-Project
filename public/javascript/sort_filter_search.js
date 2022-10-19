@@ -15,20 +15,30 @@
 // Set filters:
 filters_dict = {"Shoes" : false, "Shirts" : false, "Pants" : false, "Toiletries" : false, "House Items" : false, "Seasonal" : false, "Other" : false};
 
+// Check if any filters should be changed intially changed if url for page has filters added in. At the very end after the setup, we will call the function filter to apply the initial filters
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+if (urlParams.has('filter')) {
+    const input_filter = urlParams.get('filter');
+    filters_dict[input_filter] = true;
+    // Then check filter box to show filter has been applied
+    document.getElementById(input_filter).checked = true;
+}
+if (urlParams.has('search')) {
+    const input_search = urlParams.get('serach');
+}
+
+
 // Initial order of elements
 order = document.getElementsByClassName("single_item");
 order = Array.from(order);
 
-// Shared methods
 
 // Gets attribute from innnerhtml
 function getAttributeText(element, attribute) {
     return element.getElementsByClassName(attribute)[0].innerText;
 
 }
-
-// End of shared methods
-
 
 // Sorting methods
 
@@ -149,3 +159,6 @@ searchInput.addEventListener("search", function() {
 searchInput.addEventListener("keyup", (event) => {
     filter("input_from_search_bar");
 });
+
+// Then apply the filter once in case any parameters were changed at the beginning
+filter("input_from_search_bar");
