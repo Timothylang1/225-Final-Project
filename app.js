@@ -219,6 +219,10 @@ app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
+app.get("/test/test", (req, res) => {
+  res.render("login");
+});
+
 // code for creating new user
 
 /* 
