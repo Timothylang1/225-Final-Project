@@ -1,3 +1,12 @@
+.container {
+  /* Point of making container flexbox is to allow all the elements to take up the full height of the screen by
+  setting the container to min-height: 100vh and the elements inside to flex-grow: 1 */
+  display: flex;
+  flex-wrap: wrap;
+
+  /* Adds in each item underneath the previous item rather than along the same row */
+  flex-direction: column;
+}
 
 .flex-container {
   flex: 1 0 80%;
@@ -19,6 +28,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
+
 }
 
 .flex-item {
