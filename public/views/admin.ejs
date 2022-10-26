@@ -1,90 +1,75 @@
 <%- include('partials/adminsidebars') %>
-<link rel="stylesheet" href="css/admin-home.css">
+    <link rel="stylesheet" href="css/admin-home.css">
 
-                <div class="topbar">
-                    <p class="all_items">All Items</p>
-                    <div class="sort">
-                        <!-- Drop down menu is made up of three divs (the hover, the border, and the actualy menu) -->
-                        <div class="sort_and_filter">
-                            <img src="images/sort.png" alt="">
-                            <p>Sort</p>
-                        </div>
-                        <%- include('partials/sort') %>
-                    </div>
-                    <div class="filter">
-                        <div class="sort_and_filter">
-                            <img src="images/filter.png" alt="">
-                            <p>Filter</p>
-                        </div>
-                        <%- include('partials/filter') %>
-                    </div>
-                    <input type="Search" placeholder="Search" class="search_bar" />
-                    <div class="filler"></div>
+    <div class="topbar">
+        <p class="all_items">All Items</p>
+        <div class="sort">
+            <!-- Drop down menu is made up of three divs (the hover, the border, and the actualy menu) -->
+            <div class="sort_and_filter">
+                <img src="images/sort.png" alt="">
+                <p>Sort</p>
+            </div>
+            <%- include('partials/sort') %>
+        </div>
+        <div class="filter">
+            <div class="sort_and_filter">
+                <img src="images/filter.png" alt="">
+                <p>Filter</p>
+            </div>
+            <%- include('partials/filter') %>
+        </div>
+        <input type="Search" placeholder="Search" class="search_bar" />
+        <div class="filler"></div>
+    </div>
+    <div class="items_container">
+        <div class="column_label">
+            <p class="img_label">Image</p>
+            <p class="name_label">Name</p>
+            <p class="description_label">Description</p>
+            <p class="type_label">Type</p>
+            <p class="date_label">Date Added</p>
+            <p class="edit_label">Edit Item</p>
+            <p class="delete_label">Delete Item</p>
+        </div>
+        <% items.forEach(function(image) { %>
+            <div class="single_item">
+                <div class="image img_label">
+                    <img src="data:image/<%=image.img.contentType%>;base64,
+                     <%=image.img.data.toString('base64')%>">
                 </div>
-                <div class="items_container">
-                    <div class="column_label">
-                        <p class="img_label">Image</p>
-                        <p class="name_label">Name</p>
-                        <p class="description_label">Description</p>
-                        <p class="type_label">Type</p>
-                        <p class="date_label">Date Added</p>
-                        <p class="edit_label">Edit Item</p>
-                        <p class="delete_label">Delete Item</p>
-                    </div>
-
-                    <div class="single_item">
-                        <div class="image img_label">
-                            <img src="images/sample1.png" alt="">
-                        </div>
-                        <div class="name_label">
-                            <p class="name">Shoes</p>
-                        </div>
-                        <div class="description_label">
-                            <p class="description">Red sneakers, slightly worn</p>
-                        </div>
-                        <div class="type_label">
-                            <p class="type">Shirts</p>
-                        </div>
-                        <div class="date_label">
-                            <p class="main_date">May 30, 2020</p>
-                            <p class="time_stamp">6:30 am</p>
-                        </div>
-                        <div class="edit_label">
-                            <button class="button_design">Edit</button>
-                        </div>
-                        <div class="delete_label">
-                            <button class="button_design">Delete</button>
-                        </div>
-                    </div>
-
-                    <div class="single_item">
-                        <div class="image img_label">
-                            <img src="images/sample1.png" alt="">
-                        </div>
-                        <div class="name_label">
-                            <p class="name">Pants</p>
-                        </div>
-                        <div class="description_label">
-                            <p class="description">Red sneakers, slightly worn</p>
-                        </div>
-                        <div class="type_label">
-                            <p class="type">Pants</p>
-                        </div>
-                        <div class="date_label">
-                            <p class="main_date" tag="main_date">May 29, 2020</p>
-                            <p class="time_stamp" tag="time_stamp">6:30 am</p>
-                        </div>
-                        <div class="edit_label">
-                            <button class="button_design">Edit</button>
-                        </div>
-                        <div class="delete_label">
-                            <button class="button_design">Delete</button>
-                        </div>
-                    </div>
+                <div class="name_label">
+                    <p class="name">
+                        <%= image.name %>
+                    </p>
+                </div>
+                <div class="description_label">
+                    <p class="description">
+                        <%= image.desc %>
+                    </p>
+                </div>
+                <div class="type_label">
+                    <p class="type">
+                        <%= image.type %>
+                    </p>
+                </div>
+                <div class="date_label">
+                    <p class="main_date">May 30, 2020</p>
+                    <p class="time_stamp">6:30 am</p>
+                </div>
+                <div class="edit_label">
+                    <button class="button_design">Edit</button>
+                </div>
+                <div class="delete_label">
+                    <button onclick="window.location.href='/delete/<%= image._id %> ' "
+                        class="button_design">Delete</button>
                 </div>
             </div>
-        </div>
+            <% })%>
+
+
+    </div>
+    </div>
     </div>
     <!-- Once everything is set up, add in functionality -->
     <script src="javascript/sort_filter_search.js"></script>
-</body>
+    </body>
