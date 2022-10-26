@@ -98,8 +98,7 @@ function date_type_sort(element1, element2) {
 
 function getDate(element) {
     month_day_year = element.getElementsByClassName("main_date")[0].innerText;
-    time = element.getElementsByClassName("time_stamp")[0].innerText;
-    return new Date(month_day_year + " " + time);
+    return new Date(month_day_year);
 }
 
 function compare(item1, item2) {

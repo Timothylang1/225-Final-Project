@@ -234,18 +234,8 @@
 }
 
 .items_container > .single_item > .date_label > .main_date {
-    font-size: 13px;
+    font-size: 15px;
     margin: 0px 10px 0px 0px;
-    
-}
-
-.items_container > .single_item > .date_label > .time_stamp {
-    margin: 0px 10px 0px 0px;
-    color: #9FA2B4;
-    font-size: 11px;
-    
-     /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
-     white-space: nowrap;
     
 }
 
