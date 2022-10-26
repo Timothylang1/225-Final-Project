@@ -14,23 +14,37 @@
     <div class="flex-container">
       <% items.forEach(function(image) { %>
         <li class="flex-item">
-          <div class="flip-card">
+          <!-- <div class="flip-card">
             <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img style="max-width:65%; max-height:65%" src="data:image/<%=image.img.contentType%>;base64,
+              <div class="flip-card-front">  -->
+            <div class="card">
+                <img  class="card-img"  style="max-width:65%; max-height:65%" src="data:image/<%=image.img.contentType%>;base64,
                      <%=image.img.data.toString('base64')%>">
+                    <div class="text">
+                        <h3> <%= image.name %> </h3>                
+                        <p>Type: shoe  </p> 
+                    </div>
+                <!-- <p><%= image.desc %> </p> -->
+                <p><button>See full description</button></p>
+            </div>         
+
+                <!-- <img  class="card-img"  style="max-width:65%; max-height:65%" src="data:image/<%=image.img.contentType%>;base64,
+                     <%=image.img.data.toString('base64')%>">
+                    <div class="text"> 
+                        <h4>
+                            <%= image.name %>
+                        </h4>     
+                            <p>Type: shoe  </p>  
+                    </div>   
+
               </div>
-              <div class="flip-card-back">
-                <h1>
-                  <%= image.name %>
-                </h1>
+              <div class="flip-card-back">             
                 <p>
                   <%= image.desc %>
-                </p>
-                <p>thsid asidfjlas dfksda flskadjf sdkfjdf asfksdaf jkfds fdklfjd fljfsdlf diofsdf jsdjfsd fosdofso jfaosd</p>
+                </p>               
               </div>
             </div>
-          </div>
+          </div> -->
         </li>
         <% }) %>
 
