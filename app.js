@@ -150,7 +150,14 @@ app.route("/logout").get((req, res, next) => {
 
 app.route("/admin").get((req, res) => {
   if (req.isAuthenticated()) {
-    res.render("admin");
+    Item.find({}, (err, items) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("An error occurred", err);
+      } else {
+        res.render("admin", { items });
+      }
+    });
   } else {
     res.redirect("/login");
   }
@@ -211,16 +218,12 @@ app.post("/upload-image", upload.single("image"), (req, res, next) => {
 
 app.route("/delete/:id").get((req, res) => {
   const id = req.params.id;
-  Item.find({ _id: id }).remove().exec();
+  imgModel.find({ _id: id }).remove().exec();
   res.render("deleted");
 });
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
-});
-
-app.get("/test/test", (req, res) => {
-  res.render("login");
 });
 
 // code for creating new user
