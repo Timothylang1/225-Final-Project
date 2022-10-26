@@ -30,18 +30,18 @@
   list-style: none;
 }
 
-.flex-item {
+/* .flex-item {
   
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);   */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
   padding: 35px;
   width: 200px;
   height: 150px;
   margin-top: 60px;  
   line-height: 10px;  
-  /* font-weight: bold; */
+  font-weight: bold;
  
 
-}
+} */
 
 /* All elements in left_container */
 .left_bar_container {
@@ -103,6 +103,9 @@
   max-width: 400px;
   margin: auto;
   text-align: center;
+  margin-top: 50px;  
+  line-height: 10px;  
+  padding: 40px;
  
 }
 
@@ -118,8 +121,8 @@
 
 .card > .card-img {
  
-  width: 326px;
-  height: 130px;
+  width: 300px;
+  height: 160px;
  
 }  
 
