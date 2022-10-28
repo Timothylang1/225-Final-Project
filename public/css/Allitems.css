@@ -30,18 +30,6 @@
   list-style: none;
 }
 
-/* .flex-item {
-  
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);  
-  padding: 35px;
-  width: 200px;
-  height: 150px;
-  margin-top: 60px;  
-  line-height: 10px;  
-  font-weight: bold;
- 
-
-} */
 
 /* All elements in left_container */
 .left_bar_container {
@@ -98,28 +86,46 @@
 
 }
 
-.card {
+/* All elements in the single_item */
+.single_item {
   /* box-shadow: 0 6px 10px 0 rgba(100, 36, 145, 0.2); */
-  max-width: 400px;
+  max-width: 300px;
   margin: auto;
   text-align: center;
   margin-top: 50px;  
-  line-height: 10px;  
   padding: 40px;
+  display: flex;
+  flex-direction: column;
  
 }
 
-.card > .text {
+.single_item > .text {
   text-align: left;
   font-family: 'Barlow';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 12px;
   letter-spacing: 0.1em;
-  }
+  display: flex;
+  flex-wrap: wrap;
 
-.card > .card-img {
+}
+
+.single_item > .text > h3 {
+  margin: 3px 0px;
+  flex-basis: 100%;
+}
+
+.single_item > .text > p {
+  margin: 3px 4px 3px 0px;
+}
+
+.single_item > .text > .break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.single_item > .single_item-img {
  
   width: 300px;
   height: 160px;
@@ -127,7 +133,7 @@
 }  
 
 
-.card button {
+.single_item button {
   border: none;
   outline: 0;
   padding: 12px;
@@ -138,60 +144,15 @@
   width: 100%;
   font-size: 14px;
   font-family: 'Barlow';
+  margin-top: 4px;
 }
 
-.card button:hover {
+.single_item button:hover {
   opacity: 0.7;
 }
 
-/* .flip-card {
-  background-color: transparent;
-  width: 200px;
-  height: 150px;
-  /* border: 1px solid #f1f1f1; */
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-} */
 
 
-
-/* This container is needed to position the front and back side */
-/* .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-} */
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-/* .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-} */
-
-/* Position the front and back side */
-/* .flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 180px;
-  height: 160px;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-} */
-
-/* Style the front side (fallback if image is missing) */
-/* .flip-card-front {
-  background-color: white;
-} */
-
-/* Style the back side */
-/* .flip-card-back {
-  background-color: white;
-  color: black;
-  transform: rotateY(180deg);
-  text-align: center;
-  font-family: arial;
-  line-height: 20px; 
-} */
 
 
 
