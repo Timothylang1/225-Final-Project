@@ -66,6 +66,7 @@ let imageSchema = new mongoose.Schema({
     data: Buffer,
     contentType: String,
   },
+  date: { type: Date, default: Date.now },
 });
 
 let imgModel = DB.model("Image", imageSchema);
@@ -150,7 +151,7 @@ app.route("/logout").get((req, res, next) => {
 
 app.route("/admin").get((req, res) => {
   if (req.isAuthenticated()) {
-    Item.find({}, (err, items) => {
+    imgModel.find({}, (err, items) => {
       if (err) {
         console.log(err);
         res.status(500).send("An error occurred", err);
