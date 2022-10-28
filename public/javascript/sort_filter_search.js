@@ -35,10 +35,14 @@ order = document.getElementsByClassName("single_item");
 order = Array.from(order);
 
 
-// Gets attribute from innnerhtml
+// Gets attribute from innnerhtml, or return empty string if it can't find inner html
 function getAttributeText(element, attribute) {
-    return element.getElementsByClassName(attribute)[0].innerText;
-
+    listofelements = element.getElementsByClassName(attribute);
+    if (listofelements.length == 1) {
+        return listofelements[0].innerText;
+    }
+    // If no elements of that class found, return an empty string
+    return "";
 }
 
 // Sorting methods
@@ -97,9 +101,8 @@ function date_type_sort(element1, element2) {
 }
 
 function getDate(element) {
-    month_day_year = element.getElementsByClassName("main_date")[0].innerText;
-    time = element.getElementsByClassName("time_stamp")[0].innerText;
-    return new Date(month_day_year + " " + time);
+    month_day_year = getAttributeText(element, "main_date");
+    return new Date(month_day_year);
 }
 
 function compare(item1, item2) {
