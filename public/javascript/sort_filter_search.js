@@ -130,6 +130,7 @@ function filter(type) {
         let description = getAttributeText(element, "description");
         let type = getAttributeText(element, "type");
         let date = getDate(element).toDateString().substring(4); // Only include month, day and year
+        console.log(date);
     
         if ((name.toLowerCase().includes(searchtext) || 
         description.toLowerCase().includes(searchtext) || 
