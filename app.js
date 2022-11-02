@@ -220,7 +220,7 @@ app.post("/upload-image", upload.single("image"), (req, res, next) => {
 app.route("/delete/:id").get((req, res) => {
   const id = req.params.id;
   imgModel.find({ _id: id }).remove().exec();
-  res.render("deleted");
+  res.redirect("/admin");
 });
 
 app.listen(port, () => {
