@@ -1,0 +1,38 @@
+<%- include('partials/adminsidebars') %>
+    <link rel="stylesheet" href="/css/admin-newitem.css">
+    <!-- add stuff here -->
+    <div class="new_items_info">
+        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+            <label for="name">Item Name</label><br>
+            <input type="text" id="name" name="name" class="name"><br>
+
+
+            <label for="description" class="box-titles">Description</label><br>
+            <textarea id="desc" name="desc" class="description"></textarea>
+            <br />
+
+            <label for="type">Type</label><br />
+            <select name="type" id="type" class="type">
+                <option value="Shirts">Shoes</option>
+                <option value="Shorts">Shirts</option>
+                <option value="Shoes">Pants</option>
+                <option value="Books">Toiletries</option>
+                <option value="House Items">House Items</option>
+                <option value="Seasonal">Seasonal</option>
+                <option value="Other">Other</option>
+            </select>
+            <br>
+            <br>
+            <input type="file" id="image" name="image" value="" required>
+
+            <button class="final__submit">
+                <span type="submit" class="button__text">submit</span>
+                <i class="button__icon fas fa-chevron-right"></i>
+
+        </form>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </body>

@@ -223,6 +223,22 @@ app.route("/delete/:id").get((req, res) => {
   res.redirect("/admin");
 });
 
+app
+  .route("/edit/:id")
+  .get((req, res) => {
+    const id = req.params.id;
+    imgModel.find({ _id: id }, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("admin-edit");
+      }
+    });
+  })
+  .post((req, res) => {
+    // update
+  });
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });

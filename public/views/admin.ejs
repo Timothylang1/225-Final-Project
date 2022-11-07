@@ -53,10 +53,12 @@
                     </p>
                 </div>
                 <div class="date_label">
-                    <p class="main_date"><%= image.date.toDateString().substring(4); %></p>
+                    <p class="main_date">
+                        <%= image.date.toDateString().substring(4); %>
+                    </p>
                 </div>
                 <div class="edit_label">
-                    <button class="button_design">Edit</button>
+                    <button onclick="window.location.href='/edit/<%= image._id %>' " class="button_design">Edit</button>
                 </div>
                 <div class="delete_label">
                     <button onclick="window.location.href='/delete/<%= image._id %> ' "
