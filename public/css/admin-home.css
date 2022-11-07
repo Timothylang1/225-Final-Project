@@ -161,11 +161,17 @@
 
 .name_label {
     flex: 0 0 15%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 
 }
 
 .description_label {
     flex: 0 0 25%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 
 }
 
@@ -219,6 +225,7 @@
     margin: 0px 20px 0px 0px;
     font-size: 15px;
     font-weight: 700;
+    
 }
 
 .items_container > .single_item > .description_label > p {

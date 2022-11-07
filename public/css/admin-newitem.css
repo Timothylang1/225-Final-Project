@@ -1,7 +1,7 @@
 .all_items_container{
-    position: relative;
-    align-items: center;
     width: fit-content;
+    /* Modified original container so that uploaded image or misfailed upload gets displayed alongside upload image */
+    display: flex;
 }
 
 .new_items_info{
@@ -12,30 +12,19 @@
          
 }
 
-
-
-
-/* .Name{
-    border: none;
-    border-bottom: 2px solid #D1D1D4;
-    background: none;
-    padding: 10px;
-    padding-left: 34px;
-    font-weight: 700;
-    width: 75%;
-    transition: .2s;
-} */
-
-
 .description{
-    padding: 36px 20px;
+    margin: 5px 0px;
+    padding: 5px;
+    width: 250px;
+    height: 200px;
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    border-radius: 24px;
+    font-family: system-ui;
 
 }
 
 .name{
+    margin: 5px 0px;
     padding: 10px 20px;
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
@@ -43,15 +32,12 @@
 
 }
 .type{
+    margin: 5px 0px;
     padding: 10px 20px;
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     border-radius: 24px;
 
-}
-
-.image-submit{
-    margin-top:30px;
 }
 
 .final__submit {
@@ -66,6 +52,50 @@
     color: white;
     cursor: pointer;
     width: 100%;
+    transition: 0.7s;
     
 }
+
+.final__submit:hover {
+    background: lightgreen;
+    color: black;
+
+}
+
+.successful_upload {
+    padding: 10px;
+    margin-left: 40px;
+    background-color: lightgreen;
+    border-radius: 50px;
+
+}
+
+.successful_upload > .success {
+    text-align: center;
+    width: 100%;
+
+    /* For the text */
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.successful_upload > .uploaded_item {
+    display: flex;
+}
+
+.successful_upload > .uploaded_item > img {
+    width: 300px;
+    margin: 10px;
+    border-style: dotted;
+    border-color: black;
+
+}
+
+.successful_upload > .uploaded_item > .right_side {
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
 

@@ -183,9 +183,6 @@ app.route("/admin-newitem").get((req, res) => {
   }
 });
 
-app.get("/upload-image", (req, res) => {
-  res.render("upload-image");
-});
 app.post("/upload-image", upload.single("image"), (req, res, next) => {
   let obj = {
     name: req.body.name,
@@ -201,18 +198,10 @@ app.post("/upload-image", upload.single("image"), (req, res, next) => {
 
   imgModel.create(obj, (err, item) => {
     if (err) {
-      console.log(err);
+      res.render("admin-newitem", { err });
     } else {
-      // grab all images and render them
-      imgModel.find({}, (err, items) => {
-        if (err) {
-          console.log(err);
-          res.status(500).send("An error occurred", err);
-        } else {
-          fs.unlinkSync(path.join(__dirname + "/uploads/" + req.file.filename));
-          res.render("uploaded-images", { items });
-        }
-      });
+      fs.unlinkSync(path.join(__dirname + "/uploads/" + req.file.filename)); // Removes image from local drive
+      res.render("admin-newitem", { obj });
     }
   });
 });
