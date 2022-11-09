@@ -1,32 +1,17 @@
 <%- include('partials/navbar') %>
 <link rel="stylesheet" href="css/admin-home.css">
         <!-- Picture of free swap front door, title, and information about the free swap. -->
-        <div class="container">
-            <img src="images/front-door.png" alt="" height="400" style="
-            position: relative;
-            top: 700px;
-            left: 900px;
-            width: 500px;
-            height: 550px;
-            border: none;
-          " />
-
+        <div style="display: flex; flex-wrap: wrap; text-align: center; padding: 10px;">
+          <div style="flex: 0 0 60%">
             <p style="
             color: #d44420;
-            font-size: 50px;
-            position: relative;
-            bottom: 600px;
-            left: 60px;
-          ">
+            font-size: 50px;">
                 About
             </p>
 
             <p style="
             color: #01426a;
             font-size: 25px;
-            position: relative;
-            bottom: 600px;
-            left: 70px;
           ">
                 The Mac Free Swap is a free item exchange run by the Macalester<br />
                 Sustainability Office. The exchange has been helping Macalester
@@ -48,24 +33,31 @@
                 <br>Drop off items that are in good condition and that can fit on a shelf.<br> Take items you love and use heavily to 
                 ensure the resources used to produce<br> the item do not go to waste.<br /><br />
             </p>
+          </div>
+            <img src="images/front-door.png" alt="" width="560px"/>
+
+          
             <p style="
-            font-family: Barlow;
             color: #01426a;
             font-size: 30px;
-            position: relative;
-            bottom: 400px;
-            left: 300px;
+            flex: 0 0 50%;
+            margin-top: 40px;
           ">
                 Location: in
                 the garage behind the<br> Sustainability Office at 1657 Lincoln<br/>
                 (second house behind 77 Mac).<br /><br />
                 Hours: open 9am-6pm daily.
             </p>
+            <iframe style="flex: 0 0 50%; height: 628px; margin-top: 40px;" src="https://maps.google.com/maps?q=1657%20Lincoln%20Avenue,%20Saint%20Paul,%20MN&t=k&z=17&ie=UTF8&iwloc=&output=embed" 
+              frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
+      
+          
+    
         </div>
-        <div class="mapouter"><div class="gmap_canvas"><iframe width="642" height="528" id="gmap_canvas" src="https://maps.google.com/maps?q=1657%20Lincoln%20Avenue,%20Saint%20Paul,%20MN&t=k&z=17&ie=UTF8&iwloc=&output=embed" 
-          frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-        </iframe>
-        <br><style>.mapouter{position:relative;text-align:right;height:528px;width:642px;bottom:1370px;left:900px}</style><a href="https://www.embedgooglemap.net">embed google my maps</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:528px;width:642px;}</style></div></div>
-    </div>
+       
+      </div>
+    
+     
 </body>
 </html>
