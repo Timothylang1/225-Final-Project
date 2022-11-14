@@ -32,25 +32,31 @@
         </form>
     </div>
     <% if (locals.err) { %>
-       <p>Could not upload image: please contact Laith at lalayass@macalester.edu or 612 456 6286 with the codeword n-factorial</p>
-    <% } %>
-    <% if (locals.obj) { %>    
-        <div class="successful_upload">
-            <div class="success">
-                <p>Successfully Uploaded:</p>
-            </div>
-            <div class="uploaded_item">
-                <img src="data:obj/<%=obj.img.contentType%>;base64,
+        <p>Could not upload image: please contact Laith at lalayass@macalester.edu with the codeword n-factorial</p>
+        <% } %>
+            <% if (locals.obj) { %>
+                <div class="successful_upload">
+                    <div class="success">
+                        <p>Successfully Uploaded:</p>
+                    </div>
+                    <div class="uploaded_item">
+                        <img src="data:obj/<%=obj.img.contentType%>;base64,
                 <%=obj.img.data.toString('base64')%>">
-                <div class="right_side">
-                    <p><b>Name: </b><%= obj.name %></p>               
-                    <p><b>Type: </b><%= obj.type %></p>
-                    <p><b>Description: </b><%= obj.desc %></p>
+                        <div class="right_side">
+                            <p><b>Name: </b>
+                                <%= obj.name %>
+                            </p>
+                            <p><b>Type: </b>
+                                <%= obj.type %>
+                            </p>
+                            <p><b>Description: </b>
+                                <%= obj.desc %>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    <% } %>
-    </div>
-    </div>
-    </div>
-    </body>
+                <% } %>
+                    </div>
+                    </div>
+                    </div>
+                    </body>
