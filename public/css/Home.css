@@ -13,6 +13,7 @@
   /* The combination of these two lines allow the macalester logo to move left, but not so much that the opening line gets bunched up if the window is resized */
   min-width: 600px;
   flex: 0 0 70%;
+
 }
 
 .opening_line > .Welcome {
@@ -25,7 +26,7 @@
   line-height: 80px;
   padding-left: 70px;
   opacity: 0%;
-  animation: 4s slideInReveal forwards;
+  animation: 2s revealSlow forwards;
 }
 
 .opening_line > .Welcome_2 {
@@ -36,7 +37,12 @@
   line-height: 10px;
   padding-left: 70px;
   opacity: 0%;
-  animation: 4s revealSlow forwards;
+  animation: 5s revealSlow forwards;
+  
+}
+
+.small_screen {
+  display: none;
 }
 
 .macalester_logo {
@@ -46,6 +52,7 @@
   opacity: 0%;
   /* Forwards tells animation that the last keystroke is the final setting of this object. Otherwise, it will revert back to its original form */
   animation: 4s slideInReveal forwards;
+
 }
 
 @keyframes revealSlow {
@@ -191,5 +198,92 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .macalester_logo {
+    height: 0px;
+    z-index: 1;
+    height: 250px;
+    opacity: 25%;
+  }
+
+  @keyframes slideInReveal {
+    100% {
+      translate: -50%;
+      opacity: 25%;
+    }
+  }
+
+  .top {
+    padding: 10px 10px 50px 10px;
+    height: fit-content;
+  }
+
+  .opening_line {
+    text-align: center;
+    /* Reset min width back to 0 */
+    min-width: 0px;
+    /* Now takes up entire available width */
+    flex: 0 0 100%;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+  }
+
+  .opening_line > .Welcome {
+    padding: 0px;
+    font-size: 55px;
+    line-height: 69px;
+  }
+
+  .opening_line > .spacer {
+    height: 15px;
+  }
+
+  .opening_line > .Welcome_2 {
+    padding: 0px;
+    line-height: 25px;
+    font-size: 20px;
+    margin: 0px;
+  }
+
+  .small_screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .small_screen > .small_screen_button {
+    border: none;
+    background-color: #01426a;
+    color: white;
+    /* Creates rounded borders */
+    border-radius: 40px;
+    padding: 10px 5px 10px 5px;
+    margin: 0px 10px 0px 10px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .shortcut_line {
+    display: none;
+  }
+
+  .latest_addition {
+    padding: 10px
+  }
   
+  .latest_addition > .latest_addition_opener {
+    font-size: 40px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .latest_addition > .latest_items_container > .latest_items {
+    flex-direction: column;
+  }
+
+  .latest_addition > .latest_items_container > .arrow {
+    display: none;
+  }
 }

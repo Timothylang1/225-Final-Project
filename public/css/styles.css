@@ -28,7 +28,6 @@ body {
   /* Determines color of font */
   color: #01426a;
   font-size: 18px;
-  font-family: system-ui;
   font-weight: 500;
   /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
   white-space: nowrap;
@@ -115,5 +114,9 @@ body {
   }
   .middle_bar { 
     display: none;
+  }
+  .navigation_bar {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
   }
 }
