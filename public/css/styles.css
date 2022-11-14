@@ -1,101 +1,109 @@
 * {
- font-family: system-ui; 
+  font-family: system-ui;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 
-    /* Creates linear gradient from left to right */
-    background-image: linear-gradient(to bottom right, #f5f5f5, #a5a5a5);
+  /* Creates linear gradient from left to right */
+  background-image: linear-gradient(to bottom right, #f5f5f5, #a5a5a5);
 }
 
 .container {
-    max-width: 1680px;
-    overflow: visible;
-    margin: auto;
+  max-width: 1680px;
+  overflow: visible;
+  margin: auto;
 
-    /* Container always fits whole screen height wise */
-    min-height: 100vh;
+  /* Container always fits whole screen height wise */
+  min-height: 100vh;
 }
 
 .font {
-    /* Determines color of font */
-    color : #01426A;
-    font-size: 18px;
-    font-family: system-ui;
-    font-weight: 500;
-    /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
-    white-space: nowrap;
+  /* Determines color of font */
+  color: #01426a;
+  font-size: 18px;
+  font-family: system-ui;
+  font-weight: 500;
+  /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
+  white-space: nowrap;
 }
 
 .navigation_bar {
-    /* No wrap enabled since we want the items to be all on one line */
-    /* Display type is flex*/
-    display: flex;
-    /* Aligns all items within flexbox to be centered along horizontal center axis. Also shrinks each individual item to smallest amount height wise it can be */
-    /* ---------------- SUPER USEFUL LINE FOR FLEXBOX -------------------------- */
-    align-items: center;
-    padding: 0px 10px 0px 10px;
-    background-color: white;
+  /* No wrap enabled since we want the items to be all on one line */
+  /* Display type is flex*/
+  display: flex;
+  /* Aligns all items within flexbox to be centered along horizontal center axis. Also shrinks each individual item to smallest amount height wise it can be */
+  /* ---------------- SUPER USEFUL LINE FOR FLEXBOX -------------------------- */
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+  background-color: white;
 }
 
 /* All the items in the left bar */
 .left_bar {
-    /* https://stackoverflow.com/questions/60121604/my-25-width-flex-item-is-taking-100-width-after-wrapping */
-    /* First number enables flex-grow = item is allowed to grow to fill available space */
-    /* Second number is flex-shrink = item is allowed to shrink if it is bigger than the container (i.e. if a screen shrinks down) */
-    /* Third number is flex-basis = percentage width the item should take from flexbox */
-    /* flex: 0 0 25%; */
-    flex-basis: 30%;
+  /* https://stackoverflow.com/questions/60121604/my-25-width-flex-item-is-taking-100-width-after-wrapping */
+  /* First number enables flex-grow = item is allowed to grow to fill available space */
+  /* Second number is flex-shrink = item is allowed to shrink if it is bigger than the container (i.e. if a screen shrinks down) */
+  /* Third number is flex-basis = percentage width the item should take from flexbox */
+  /* flex: 0 0 25%; */
+  flex-basis: 30%;
 
-    /* Create */
-    display: flex;
-    align-items: center;
+  /* Create */
+  display: flex;
+  align-items: center;
 }
 
 .icon {
-    padding: 0px 20px 0px 10px;
+  padding: 0px 20px 0px 10px;
 }
 
 /* All items in the middle bar */
 .middle_bar {
-    display: flex;
-    flex-basis: 40%;
-    text-align: center;
+  display: flex;
+  flex-basis: 40%;
+  text-align: center;
 }
 
 /* This is for each item in the flex container in the middle */
 .middle_items {
-    flex-basis: 25%;
-    border: none;
-    background-color: white;
-    /* Creates rounded borders */
-    border-radius: 40px;
-    /* Padding/margin goes in this order : top right bot left */
-    /* Padding is area between the container and the context in the container, in this case, the text */
-    /* Margin is the space around the container */
-    padding: 10px 5px 10px 5px;
-    margin: 0px 10px 0px 10px;
-    min-width: 110px;
-
+  flex-basis: 25%;
+  border: none;
+  background-color: white;
+  /* Creates rounded borders */
+  border-radius: 40px;
+  /* Padding/margin goes in this order : top right bot left */
+  /* Padding is area between the container and the context in the container, in this case, the text */
+  /* Margin is the space around the container */
+  padding: 10px 5px 10px 5px;
+  margin: 0px 10px 0px 10px;
+  min-width: 110px;
 }
 
 /* On hover of any items with the class middle_items, it will do the following */
 .middle_items:hover {
-    background-color: #D44420;
-    transition: 0.7s;
-    font-size: 20px;
-    font-weight: 900;
-    color: white;
+  background-color: #d44420;
+  transition: 0.7s;
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
 }
 
 /* All items on the right */
 .search_bar {
-    /* Aligns the search bar all the way to the right (whether in the flex box or not)*/
-    margin-left: auto;
-    padding: 7px 15px 7px 15px;
-    background-color: #C4C4C4;
-    border-style: hidden;
-    border-radius: 40px;
-    /* border: none; */
+  /* Aligns the search bar all the way to the right (whether in the flex box or not)*/
+  margin-left: auto;
+  padding: 7px 15px 7px 15px;
+  background-color: #c4c4c4;
+  border-style: hidden;
+  border-radius: 40px;
+  /* border: none; */
+}
+
+@media only screen and (max-width: 600px) {
 }
