@@ -2,13 +2,13 @@
     <link rel="stylesheet" href="/css/admin-newitem.css">
     <!-- add stuff here -->
     <div class="new_items_info">
-        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+        <form action="/edit/<%= item[0]._id %>" method="POST">
             <label for="name">Item Name</label><br>
-            <input type="text" id="name" name="name" class="name"><br>
+            <input type="text" id="name" name="name" value="<%= item[0].name %>" class="name"><br>
 
 
             <label for="description" class="box-titles">Description</label><br>
-            <textarea id="desc" name="desc" class="description"></textarea>
+            <textarea id="desc" name="desc" class="description"><%= item[0].desc %></textarea>
             <br />
 
             <label for="type">Type</label><br />
@@ -21,17 +21,13 @@
                 <option value="Seasonal">Seasonal</option>
                 <option value="Other">Other</option>
             </select>
-            <br>
-            <br>
-            <input type="file" id="image" name="image" value="" required>
 
             <button class="final__submit">
                 <span type="submit" class="button__text">submit</span>
                 <i class="button__icon fas fa-chevron-right"></i>
-
+            </button>
         </form>
     </div>
-
     </div>
     </div>
     </div>

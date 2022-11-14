@@ -108,7 +108,7 @@ app
         res.status(500).send("An error occurred", err);
       } else {
         // Only the first 12 items are passed into the homepage (first sorted by date added)
-        items.sort(item => item.date).reverse();
+        items.sort((item) => item.date).reverse();
         if (items.length > 12) items = items.slice(0, 12);
         res.render("home", { items });
       }
@@ -179,6 +179,18 @@ app.route("/all-items").get(async (req, res) => {
   });
 });
 
+app.route("/single-item/:id").get((req, res) => {
+  const id = req.params.id;
+  imgModel.find({ _id: id }, (err, item) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("An error occurred", err);
+    } else {
+      res.render("individual-item", { item });
+    }
+  });
+});
+
 app.route("/admin-newitem").get((req, res) => {
   if (req.isAuthenticated()) {
     res.render("admin-newitem");
@@ -220,16 +232,40 @@ app
   .route("/edit/:id")
   .get((req, res) => {
     const id = req.params.id;
-    imgModel.find({ _id: id }, (err, result) => {
+    imgModel.find({ _id: id }, (err, item) => {
       if (err) {
         console.log(err);
       } else {
-        res.render("admin-edit");
+        res.render("admin-edit", { item });
       }
     });
   })
   .post((req, res) => {
-    // update
+    const id = req.params.id;
+    imgModel.find({ _id: id }, (err, foundImage) => {
+      if (err) {
+        console.log("error in post edit form");
+      } else {
+        let update = {
+          name: req.body.name,
+          description: req.body.desc,
+          type: req.body.type,
+        };
+        imgModel.findByIdAndUpdate(
+          { _id: id },
+          update,
+          { multi: true, new: true },
+          (err) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log("updated item");
+            }
+          }
+        );
+        res.redirect("/admin");
+      }
+    });
   });
 
 app.listen(process.env.PORT || 3000, function () {
