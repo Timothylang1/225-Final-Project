@@ -186,9 +186,6 @@ app.route("/single-item/:id").get((req, res) => {
       console.log(err);
       res.status(500).send("An error occurred", err);
     } else {
-      console.log("====================================");
-      console.log(id);
-      console.log("====================================");
       res.render("individual-item", { item });
     }
   });
