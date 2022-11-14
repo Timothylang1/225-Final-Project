@@ -1,14 +1,21 @@
-<!DOCTYPE html>
+<%- include('partials/navbar') %>
+
 <link rel="stylesheet" href="/css/individual-items.css">
-<html>
-<body>
-<div class = "picture">
-        <img src="women's.png" alt="" height="400"/>
-    </div>
+
+    <body>
+        <img src="data:image/<%=item[0].img.contentType%>;base64,
+    <%=item[0].img.data.toString('base64')%>" alt="" height="400" style="
+  position: relative;
+  top: 110px;
+  left: 300px;
+  width: 380px;
+  height: 350px;
+  border: none;
+" />
 
 
 
-<p style="
+        <p style="
 position: absolute;
 width: 78px;
 height: 17px;
@@ -27,8 +34,8 @@ letter-spacing: 0.1em;
 color: #01426A;
 
 opacity: 0.56;">
-Item Name
-<p style="
+            Item Name
+        <p style="
 position: absolute;
 width: 350px;
 height: 38px;
@@ -47,8 +54,8 @@ letter-spacing: 0.05em;
 color: #01426A;
 
 ">
-    Women's Running Shoe
-<p style="position: absolute;
+            <%= item[0].name %>
+                <p style="position: absolute;
 width: 85px;
 height: 17px;
 left: 800px;
@@ -66,9 +73,9 @@ letter-spacing: 0.1em;
 color: #01426A;
 
 opacity: 0.56;">
-Description
+                    Description
 
-    <p style="
+                <p style="
     position: absolute;
     width: 400px;
     height: 40px;
@@ -84,9 +91,9 @@ Description
     
     color: #01426A;
     ">
-    The radiance lives on in the Nike Air Force 1 
+                    <%= item[0].desc %>
 
-    <p style="
+                        <p style="
     position: absolute;    
 width: 34px;
 height: 17px;
@@ -106,9 +113,9 @@ color: #01426A;
 
 opacity: 0.56;
 ">
-    Type
+                            Type
 
-    <p style="position: absolute;
+                        <p style="position: absolute;
     width: 50px;
     height: 19px;
     left: 800px;
@@ -122,9 +129,9 @@ opacity: 0.56;
     letter-spacing: 0.1em;
     
     color: #01426A;">
-Shoes
+                            <%= item[0].type %>
 
-<p style="position: absolute;
+                                <p style="position: absolute;
 width: 81px;
 height: 17px;
 left: 1031px;
@@ -142,9 +149,9 @@ letter-spacing: 0.1em;
 color: #01426A;
 
 opacity: 0.56;">
-Date
+                                    Date
 
-<p style="position: absolute;
+                                <p style="position: absolute;
 width: 101px;
 height: 19px;
 left: 1031px;
@@ -159,10 +166,11 @@ letter-spacing: 0.1em;
 
 color: #01426A;
 ">
-Oct 24, 2013
+                                    <%= item[0].date %>
 
 
 
-</p>
-</body>
-</html>
+                                </p>
+    </body>
+
+    </html>

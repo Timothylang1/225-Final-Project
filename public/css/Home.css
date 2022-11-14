@@ -91,7 +91,6 @@
 
   /* Doesn't allow text to wrap around */
   white-space: nowrap;
-  
 }
 
 .shortcut_line > .middle_items:hover {
@@ -114,14 +113,12 @@
   line-height: 15px;
   text-align: center;
   white-space: nowrap;
-
 }
 
 .latest_addition {
   text-align: center;
   padding: 40px 40px 150px 40px;
   background-color: white;
-
 }
 
 .latest_addition > .latest_addition_opener {
@@ -142,13 +139,11 @@
   height: 40px;
   padding: 100px 10px 100px 10px;
   border-radius: 10px;
-
 }
 
 .latest_addition > .latest_items_container > .arrow:hover {
   background-color: #a5a5a5;
   transition: 0.7s;
-
 }
 
 .latest_addition > .latest_items_container > .latest_items {
@@ -157,14 +152,12 @@
   flex-grow: 1;
   /* Any items outside of the visible ones are hidden */
   overflow: hidden;
-
 }
 
 .latest_addition > .latest_items_container > .latest_items > .item {
   text-align: center;
   flex: 0 0 25%;
   background-color: #ffffff;
-  
 }
 
 /* FROM Allitems.css = single item */
@@ -195,5 +188,10 @@
   /* Doesn't allow paragraphs who use font to wrap around there text if the elements get too small */
   white-space: nowrap;
   color: white;
+}
 
+@media only screen and (max-width: 600px) {
+  .card {
+    background-color: red;
+  }
 }
