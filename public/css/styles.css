@@ -99,3 +99,13 @@ body {
     border-radius: 40px;
     /* border: none; */
 }
+
+@media only screen and (max-width: 600px) {
+    /* First, hide all computer content */
+  .left_bar {
+    display: none;
+  }
+  .middle_bar { 
+    display: none;
+  }
+}
