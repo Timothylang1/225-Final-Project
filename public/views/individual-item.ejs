@@ -1,59 +1,22 @@
 <%- include('partials/navbar') %>
 
+<link rel="stylesheet" href="/css/individual-items.css">
 
     <body>
+        <imgg>
         <img src="data:image/<%=item[0].img.contentType%>;base64,
-    <%=item[0].img.data.toString('base64')%>" alt="" height="400" style="
-  position: relative;
-  top: 110px;
-  left: 300px;
-  width: 380px;
-  height: 350px;
-  border: none;
-" />
+    <%=item[0].img.data.toString('base64')%>" alt="" height="400">
+    </imgg>
 
 
+<item-name>
+        <p>Item Name</p>    
+</item-name>
 
-        <p style="
-position: absolute;
-width: 78px;
-height: 17px;
-left: 800px;
-top: 90px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
-letter-spacing: 0.1em;
-
-color: #01426A;
-
-opacity: 0.56;">
-            Item Name
-        <p style="
-position: absolute;
-width: 350px;
-height: 38px;
-left: 800px;
-top: 120px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 700;
-font-size: 28px;
-line-height: 34px;
-/* identical to box height */
-
-letter-spacing: 0.05em;
-
-color: #01426A;
-
-">
+<individual-name>
             <%= item[0].name %>
+</individual-name>
+
                 <p style="position: absolute;
 width: 85px;
 height: 17px;
