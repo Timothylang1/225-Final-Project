@@ -43,6 +43,24 @@
                     All Items
                 </button>
             </div>
+            <div class="menu_container small_screen">
+                <div class="menu_dropdown">
+                    <p onclick="location.href = '/all-items';">All Items</p>
+                    <p onclick="location.href = '/about';">About</p>
+                    <p onclick="location.href = '/';">Home</p>
+                </div>
+                <div class="menu_icon" onclick="openMenu(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+                <script>
+                    function openMenu(x) {
+                        x.classList.toggle("change");
+                        document.getElementsByClassName("menu_dropdown")[0].classList.toggle("change");
+                    }
+                </script>
+            </div>
             <input type="Search" placeholder="Search" class="font search_bar" />
             <!-- Sets up functionality for searchbar -->
             <script src="javascript/setup_search.js"></script>

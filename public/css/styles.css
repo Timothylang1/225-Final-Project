@@ -93,6 +93,76 @@ body {
   color: white;
 }
 
+/* For hamburger menu that will only appear on small screen */
+.small_screen {
+    display: none;
+
+}
+
+.menu_container {
+    position: relative;
+
+}
+
+.menu_dropdown {
+    position: absolute;
+    left: -200px;
+    top: 0px;
+    transition: 0.5s;
+    opacity: 0%;
+    background-color: white;
+    padding: 50px 10px 10px 10px;
+    z-index: 3;
+    border-radius: 5px;
+
+}
+
+.menu_dropdown > p {
+    font-size: 20px;
+    text-align: center;
+    margin: 5px 0px;
+    background-color: lightblue;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.bar1, .bar2, .bar3 {
+    position: relative;
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+    z-index: 4;
+
+}
+  
+/* Rotate first bar */
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+
+}
+  
+/* Rotate last bar */
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+
+}
+
+.change {
+    left: 0%;
+    opacity: 100%;
+}
+
+/* End of hamburger menu */
+
 /* All items on the right */
 .search_bar {
   /* Aligns the search bar all the way to the right (whether in the flex box or not)*/
@@ -105,18 +175,24 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-}
-
-@media only screen and (max-width: 600px) {
     /* First, hide all computer content */
   .left_bar {
     display: none;
+
   }
+
   .middle_bar { 
     display: none;
+
   }
+
   .navigation_bar {
     background-color: rgba(0, 0, 0, 0);
     padding: 10px;
+
+  }
+
+  .small_screen {
+    display: block;
   }
 }
