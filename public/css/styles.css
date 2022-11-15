@@ -125,6 +125,7 @@ body {
     border-radius: 5px;
     white-space: nowrap;
     padding: 10px;
+    font-weight: 900;
 }
 
 .bar1, .bar2, .bar3 {
