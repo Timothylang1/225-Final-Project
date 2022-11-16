@@ -17,18 +17,12 @@
           <img class="single_item-img" style="max-width:100%; max-height:65%" src="data:image/<%=image.img.contentType%>;base64,
                      <%=image.img.data.toString('base64')%>">
           <div class="text">
-            <h3 class="name">
-              <%= image.name %>
-            </h3>
+            <h3 class="name"><%= image.name %></h3>
             <p>Type:</p>
-            <p class="type">
-              <%= image.type %>
-            </p>
+            <p class="type"><%= image.type %></p>
             <div class="break"></div>
             <p>Upload date:</p>
-            <p class="main_date">
-              <%= image.date.toDateString().substring(4); %>
-            </p>
+            <p class="main_date"><%= image.date.toDateString().substring(4); %></p>
           </div>
           <!-- <p><%= image.desc %> </p> -->
           <a href="/single-item/<%= image._id %>">

@@ -38,24 +38,16 @@
                      <%=image.img.data.toString('base64')%>">
                 </div>
                 <div class="name_label">
-                    <p class="name">
-                        <%= image.name %>
-                    </p>
+                    <p class="name"><%= image.name %></p>
                 </div>
                 <div class="description_label">
-                    <p class="description">
-                        <%= image.desc %>
-                    </p>
+                    <p class="description"><%= image.desc %></p>
                 </div>
                 <div class="type_label">
-                    <p class="type">
-                        <%= image.type %>
-                    </p>
+                    <p class="type"><%= image.type %></p>
                 </div>
                 <div class="date_label">
-                    <p class="main_date">
-                        <%= image.date.toDateString().substring(4); %>
-                    </p>
+                    <p class="main_date"><%= image.date.toDateString().substring(4); %></p>
                 </div>
                 <div class="edit_label">
                     <button onclick="window.location.href='/edit/<%= image._id %>' " class="button_design">Edit</button>
