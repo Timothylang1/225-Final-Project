@@ -13,7 +13,9 @@ if (!location.pathname.includes("/all-items")) {
     searchInput.addEventListener("keyup", (event) => {
         if (event.code === 'Enter') {
             text = searchInput.value;
-            document.location = '/all-items?search=' + text;
+            // Store searchbar text in session storage
+            sessionStorage.setItem("search", searchInput.value);
+            document.location = '/all-items';
         }
     });
 }

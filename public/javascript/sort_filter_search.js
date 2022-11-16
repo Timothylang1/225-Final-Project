@@ -57,11 +57,8 @@ for (key in sort_dict) {
     document.getElementById(key).checked = sort_dict[key];
 }
 
-// Check searchbar
-if (urlParams.has('search')) {
-    const input_search = urlParams.get('search');
-    document.getElementsByClassName('search_bar')[0].value = input_search;
-}
+// Check searchbar text in session storage if we searched for something in another page
+document.getElementsByClassName('search_bar')[0].value = sessionStorage.getItem("search");
 
 // Initial order of elements
 order = document.getElementsByClassName("single_item");
@@ -160,6 +157,9 @@ function filter(type) {
     if (type != "input_from_search_bar") {
         filters_dict[type] = !filters_dict[type];
         sessionStorage.setItem("filters_dict", JSON.stringify(filters_dict)); // Then store the most updated dictionary in sesison storage
+    }
+    else {
+        sessionStorage.setItem("search", searchInput.value); // Store latest search text as well
     }
 
     searchtext = searchInput.value.toLowerCase(); // Gets text from searchbar, lowercase everything so searchbar is less case sensitive
