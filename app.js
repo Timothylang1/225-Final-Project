@@ -135,9 +135,12 @@ app
     req.login(user, (err) => {
       if (err) {
         console.log(err);
-        res.redirect("/");
+        res.redirect("/login");
       } else {
-        passport.authenticate("local")(req, res, () => {
+        passport.authenticate("local", {
+          failureRedirect: "/login",
+          failureMessage: true,
+        })(req, res, () => {
           res.redirect("/admin");
         });
       }
