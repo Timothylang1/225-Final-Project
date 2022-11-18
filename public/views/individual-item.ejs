@@ -1,8 +1,11 @@
 <%- include('partials/navbar') %>
 
-<link rel="stylesheet" href="/css/individual-items.css">
+<link rel="stylesheet" href="/css/individual-item.css">
+<div style="display: flex; flex-wrap: wrap; padding: 4px;">
+<div style="flex: 1 0 10%" >
 
     <body>
+        
         <imgg>
         <img src="data:image/<%=item[0].img.contentType%>;base64,
     <%=item[0].img.data.toString('base64')%>" alt="" height="400">
@@ -10,129 +13,34 @@
 
 
 <item-name>
-        <p>Item Name</p>    
+    <p>Item Name</p>
 </item-name>
 
 <individual-name>
             <%= item[0].name %>
 </individual-name>
 
-                <p style="position: absolute;
-width: 85px;
-height: 17px;
-left: 800px;
-top: 200px;
+<Description><p>Description</p> </Description>
+ 
+<details-description> 
+    <%= item[0].desc %>
+ </details-description>
 
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
+<item-type><p>Type</p></item-type>
 
-letter-spacing: 0.1em;
+<type-name>
+    <%= item[0].type %>
+</type-name>               
 
-color: #01426A;
+<date-title> <p>Date</p></date-title>
+                            
+<date-time><%= item[0].date %></date-time>           
 
-opacity: 0.56;">
-                    Description
-
-                <p style="
-    position: absolute;
-    width: 400px;
-    height: 40px;
-    left: 800px;
-    top: 240px;
-    
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.1em;
-    
-    color: #01426A;
-    ">
-                    <%= item[0].desc %>
-
-                        <p style="
-    position: absolute;    
-width: 34px;
-height: 17px;
-left: 800px;
-top: 300px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
-letter-spacing: 0.1em;
-
-color: #01426A;
-
-opacity: 0.56;
-">
-                            Type
-
-                        <p style="position: absolute;
-    width: 50px;
-    height: 19px;
-    left: 800px;
-    top: 330px;
-    
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.1em;
-    
-    color: #01426A;">
-                            <%= item[0].type %>
-
-                                <p style="position: absolute;
-width: 81px;
-height: 17px;
-left: 1031px;
-top: 300px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
-letter-spacing: 0.1em;
-
-color: #01426A;
-
-opacity: 0.56;">
-                                    Date
-
-                                <p style="position: absolute;
-width: 101px;
-height: 19px;
-left: 1031px;
-top: 330px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-letter-spacing: 0.1em;
-
-color: #01426A;
-">
-                                    <%= item[0].date %>
-
-
-
-                                </p>
+       
+</p>
+</div> 
+</div>
+ 
     </body>
 
     </html>
