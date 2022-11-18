@@ -204,8 +204,8 @@ app.route("/admin-newitem").get((req, res) => {
 
 app.post("/upload-image", upload.single("image"), (req, res, next) => {
   let obj = {
-    name: capitalizeFirstLetter(req.body.name),
-    desc: capitalizeFirstLetter(req.body.desc),
+    name: trimAndCapitalizeFirstLetter(req.body.name),
+    desc: trimAndCapitalizeFirstLetter(req.body.desc),
     type: req.body.type,
     img: {
       data: fs.readFileSync(
@@ -250,8 +250,8 @@ app
         console.log("error in post edit form");
       } else {
         let update = {
-          name: capitalizeFirstLetter(req.body.name),
-          desc: capitalizeFirstLetter(req.body.desc),
+          name: trimAndCapitalizeFirstLetter(req.body.name),
+          desc: trimAndCapitalizeFirstLetter(req.body.desc),
           type: req.body.type,
         };
         imgModel.findByIdAndUpdate(
@@ -279,7 +279,8 @@ app.listen(process.env.PORT || 3000, function () {
   );
 });
 
-function capitalizeFirstLetter(text) {
+function trimAndCapitalizeFirstLetter(text) {
+  text = text.trim();
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 // app.listen(port, () => {
