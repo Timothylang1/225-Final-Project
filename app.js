@@ -13,11 +13,13 @@ const passportLocalMongoose = require("passport-local-mongoose");
 let multer = require("multer");
 const { deserializeUser } = require("passport");
 const { type } = require("os");
+const compression = require("compression");
 
 app.use(express.static(__dirname + "/public"));
 app.set("views", __dirname + "/public/views");
 app.set("view engine", "ejs");
 app.use("/uploads", express.static("uploads"));
+app.use(compression());
 
 app.use(
   bodyParser.urlencoded({
@@ -102,14 +104,12 @@ let upload = multer({ storage: storage });
 app
   .route("/")
   .get((req, res) => {
-    imgModel.find({}, (err, items) => {
+    imgModel.find({}, null, { limit: 12 }, (err, items) => {
       if (err) {
         console.log(err);
         res.status(500).send("An error occurred", err);
       } else {
-        // Only the first 12 items are passed into the homepage (first sorted by date added)
         items.sort((item) => item.date).reverse();
-        if (items.length > 12) items = items.slice(0, 12);
         res.render("home", { items });
       }
     });
