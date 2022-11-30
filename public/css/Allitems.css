@@ -13,7 +13,7 @@
   /* We first create a flex layout context */
   display: flex;
   background-color: white;
-  
+
   /* Then we define the flow direction 
      and if we allow the items to wrap 
    * Remember this is the same as:
@@ -21,61 +21,53 @@
    * flex-wrap: wrap;
    */
   flex-flow: row wrap;
-  
+
   /* Then we define how is distributed the remaining space */
   justify-content: space-around;
-  
+
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-
 /* All elements in left_container */
 .left_bar_container {
   flex: 1 0 20%;
-  background-color: #01426A;
+  background-color: #01426a;
   color: white;
   font-family: system-ui;
-
 }
 
 .left_bar_container > p {
   font-size: 26px;
   margin: 10px 0px 0px 20px;
-
 }
 
 .left_bar_container > .black_line {
   height: 2px;
   margin: 5px 10px;
   background-color: black;
-
 }
 
 .left_bar_container > .menu {
   padding: 0px 10px 10px 20px;
   font-size: 14px;
-
 }
 
 .left_bar_container > .menu > .sort_filter_selector {
   display: flex;
   align-items: center;
   margin: 5px 0px;
-
 }
 
-.left_bar_container >.menu > .sort_filter_selector > input {
+.left_bar_container > .menu > .sort_filter_selector > input {
   scale: 1.3;
-
 }
 
-.left_bar_container >.menu > .sort_filter_selector > input:checked + p {
+.left_bar_container > .menu > .sort_filter_selector > input:checked + p {
   color: #b22200;
   background-color: white;
   font-weight: 700;
-
 }
 
 .left_bar_container > .menu > .sort_filter_selector > p {
@@ -83,7 +75,6 @@
   margin: 0px 0px 0px 4px;
   transition: 0.5s;
   border-radius: 5px;
-
 }
 
 /* All elements in the single_item */
@@ -92,23 +83,21 @@
   max-width: 300px;
   margin: auto;
   text-align: center;
-  margin-top: 50px;  
+  margin-top: 50px;
   padding: 40px;
   display: flex;
   flex-direction: column;
- 
 }
 
 .single_item > .text {
   text-align: left;
-  font-family: 'Barlow';
+  font-family: "Barlow";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.1em;
   display: flex;
   flex-wrap: wrap;
-
 }
 
 .single_item > .text > h3 {
@@ -126,12 +115,9 @@
 }
 
 .single_item > .single_item-img {
- 
   width: 300px;
-  height: 220px;
- 
-}  
-
+  height: 300px;
+}
 
 .single_item button {
   border: none;
@@ -143,17 +129,10 @@
   cursor: pointer;
   width: 100%;
   font-size: 14px;
-  font-family: 'Barlow';
+  font-family: "Barlow";
   margin-top: 4px;
 }
 
 .single_item button:hover {
   opacity: 0.7;
 }
-
-
-
-
-
-
-
