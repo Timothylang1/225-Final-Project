@@ -216,7 +216,8 @@
 
 .items_container > .single_item > .image > img {
     /* Image determines height of each item */
-    height: 65px;
+    width: 90px;
+    height: 90px;
     margin: 0px 30px 0px 0px;
 }
 
