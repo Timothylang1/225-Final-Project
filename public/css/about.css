@@ -1,0 +1,19 @@
+@media only screen and (max-width: 600px) {
+    .front-door {
+      height: 400px;
+      width: 350px;
+      right: 550px;
+      top: 50px;
+    }
+    .the-location{
+        text-align: center;
+        font-size: 35px;
+    }
+    .the-map{
+        height:400px;
+      width: 1000px;
+      right: 1650px;
+      top: 50px;
+      align-content: center;
+    }
+}

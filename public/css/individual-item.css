@@ -29,7 +29,7 @@ position: absolute;
 width: 350px;
 height: 38px;
 left: 800px;
-top: 200px;
+top: 150px;
 font-family: 'Barlow';
 font-style: normal;
 font-weight: 700;
@@ -83,7 +83,7 @@ position: absolute;
 width: 34px;
 height: 17px;
 left: 800px;
-top: 320px;
+top: 350px;
 
 font-family: 'Barlow';
 font-style: normal;
@@ -118,7 +118,7 @@ opacity: 0.56;
     width: 81px;
     height: 17px;
     left: 1031px;
-    top: 320px;
+    top: 350px;
 
     font-family: 'Barlow';
     font-style: normal;
