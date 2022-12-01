@@ -1,4 +1,4 @@
-imgg{
+.theimage{
     position: relative;
     top: 110px;
     left: 230px;
@@ -7,9 +7,9 @@ imgg{
     border: none;
 }
 
-item-name{
-    position: relative;
-width: 78px;
+.item-name{
+position: relative;
+width: 80px;
 height: 17px;
 left: 800px;
 bottom: 310px;
@@ -24,7 +24,7 @@ color: #01426A;
 opacity: 0.56;
 }
 
-individual-name{
+.individual-name{
 position: absolute;
 width: 350px;
 height: 38px;
@@ -40,7 +40,7 @@ color: #01426A;
 flex: 0 0 60%;
 }
 
-Description{
+.Description{
 position: absolute;
 /* width: 85px;
 height: 17px; */
@@ -61,7 +61,7 @@ color: #01426A;
 opacity: 0.56
 }
 
-details-description{
+.details-description{
     position: absolute;
     /* width: 400px;
     height: 40px; */
@@ -77,7 +77,7 @@ details-description{
     flex: 0 0 50%;
 }
 
-item-type{
+.item-type{
                             
 position: absolute;    
 width: 34px;
@@ -99,7 +99,7 @@ color: #01426A;
 opacity: 0.56;
 
 }
-type-name{
+.type-name{
     position: absolute;
     width: 50px;
     height: 19px;
@@ -113,7 +113,7 @@ type-name{
     letter-spacing: 0.1em;
     color: #01426A;
 }
-date-title{
+.date-title{
     position: absolute;
     width: 81px;
     height: 17px;
@@ -134,7 +134,7 @@ date-title{
     opacity: 0.56;
 }
 
-date-time{
+.date-time{
 position: absolute;
 width: 101px;
 height: 19px;
@@ -149,4 +149,64 @@ line-height: 19px;
 letter-spacing: 0.1em;
 
 color: #01426A;
+}
+
+@media only screen and (max-width: 600px) {
+    .theimage {
+      height: 300px;
+      width: 250px;
+      left: 40px;
+      top: 50px;
+    }
+    .item-name{
+        font-size: 15px;
+        line-height: 15px;
+        left: 20px;
+        top:40px;
+    }
+    .individual-name{
+        font-size: 10px;
+        line-height: 15px;
+        left: 20px;
+        top: 445px;
+    }
+    .Description{
+        font-size: 15px;
+        line-height: 15px;
+        left: 20px;
+        top: 465px;
+    }
+    .details-description{
+        font-size: 10px;
+        line-height: 15px;
+        left: 20px;
+        top: 485px;
+    }
+    .item-type{
+        font-size: 15px;
+        line-height: 15px;
+        left: 20px;
+        top: 515px;
+    }
+    .type-name{
+        font-size: 10px;
+        line-height: 15px;
+        left: 20px;
+        top: 540px;
+    }
+    .date-title{
+        font-size: 10px;
+        line-height: 15px;
+        left: 20px;
+        top: 560px;
+    }
+    .date-time{
+        font-size: 10px;
+        line-height: 15px;
+        left: 20px;
+        top: 580px;
+    }
+    
+
+
 }
