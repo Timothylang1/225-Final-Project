@@ -10,6 +10,10 @@
     flex: 0 0 50%; 
       height: 628px;
 }
+.details{
+  color: #01426a;
+  font-size: 25px;
+}
 
 @media only screen and (max-width: 600px) {
   .about-container {
@@ -21,12 +25,16 @@
     }
     .the-location{
         text-align: center;
-        font-size: 25px;
+        font-size: 20px;
         flex:0 0 100%;
     }
     .the-map{
       flex: 0 0 100%;
+      height: 400px;
 
+    }
+    .details{
+      font-size: 20px;
     }
 }
 @media only screen and (max-width: 340px) {
