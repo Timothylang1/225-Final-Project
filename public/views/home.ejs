@@ -53,10 +53,18 @@
                                 <img style="max-width:75%;" src="data:image/<%=image.img.contentType%>;base64,
                             <%=image.img.data.toString('base64')%>">
                                 <h1>
-                                    <%= image.name %>
+                                    <% if(image.name.length>= 25){ %>
+                                        <%= image.name.slice(0,25) + "..." %>
+                                            <% } else { %>
+                                                <%= image.name %>
+                                                    <% } %>
                                 </h1>
                                 <p class="price">
-                                    <%= image.desc %>
+                                    <% if(image.desc.length>= 25){ %>
+                                        <%= image.desc.slice(0,25) + "..." %>
+                                            <% } else { %>
+                                                <%= image.desc%>
+                                                    <% } %>
                                 </p>
                                 <p>
                                     <%= image.type %>
