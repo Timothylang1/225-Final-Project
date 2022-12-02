@@ -1,19 +1,36 @@
+.about-container{
+  display: flex; flex-wrap: wrap; text-align: center; padding: 20px;
+}
+.the-location{
+  color: #01426a;
+  font-size: 30px;
+  flex: 0 0 50%;
+}
+.the-map{
+    flex: 0 0 50%; 
+      height: 628px;
+}
+
 @media only screen and (max-width: 600px) {
+  .about-container {
+    flex-direction: column;
+  }
     .front-door {
-      height: 400px;
-      width: 350px;
-      right: 550px;
+      width: 100%;
       top: 50px;
     }
     .the-location{
         text-align: center;
-        font-size: 35px;
+        font-size: 25px;
+        flex:0 0 100%;
     }
     .the-map{
-        height:400px;
-      width: 1000px;
-      right: 1650px;
-      top: 50px;
-      align-content: center;
+      flex: 0 0 100%;
+
     }
+}
+@media only screen and (max-width: 340px) {
+  .the-map {
+    display: none;
+  }
 }
