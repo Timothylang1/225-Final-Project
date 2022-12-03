@@ -21,50 +21,50 @@
 
 
 <body>
+    <!-- Just a div, but exclusively for navigation bar at the top of the screen. Used by Google to help with search engine -->
+    <nav class="navigation_bar">
+        <div class="left_bar font">
+            <!-- alt = alternate text shown if the image can't be displayed -->
+            <a href="/">
+                <img src="/images/handshake.png" alt="" height="65" class="icon" />
+                <!-- Table for div is to help center the text in it to be in the middle of the div -->
+            </a>
+            <p>Free Swap</p>
+        </div>
+        <div class="middle_bar">
+            <button type="button" onclick="location.href = '/';" class="middle_items font">
+                Home
+            </button>
+            <button type="button" onclick="location.href = '/about';" class="middle_items font">
+                About
+            </button>
+            <button type="button" onclick="location.href = '/admin';" class="middle_items font">
+                Admin
+            </button>
+            <button type="button" onclick="location.href = '/all-items';" class="middle_items font">
+                All Items
+            </button>
+        </div>
+        <div class="menu_container small_screen">
+            <div class="menu_dropdown">
+                <p onclick="location.href = '/all-items';">All Items</p>
+                <p onclick="location.href = '/about';">About</p>
+                <p onclick="location.href = '/';">Home</p>
+            </div>
+            <div class="menu_icon" onclick="openMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <script>
+                function openMenu(x) {
+                    x.classList.toggle("change");
+                    document.getElementsByClassName("menu_dropdown")[0].classList.toggle("change");
+                }
+            </script>
+        </div>
+        <input type="Search" placeholder="Search" class="font search_bar" />
+        <!-- Sets up functionality for searchbar -->
+        <script src="/javascript/setup_search.js"></script>
+    </nav>
     <div class="container">
-        <!-- Just a div, but exclusively for navigation bar at the top of the screen. Used by Google to help with search engine -->
-        <nav class="navigation_bar">
-            <div class="left_bar font">
-                <!-- alt = alternate text shown if the image can't be displayed -->
-                <a href="/">
-                    <img src="/images/handshake.png" alt="" height="65" class="icon" />
-                    <!-- Table for div is to help center the text in it to be in the middle of the div -->
-                </a>
-                <p>Free Swap</p>
-            </div>
-            <div class="middle_bar">
-                <button type="button" onclick="location.href = '/';" class="middle_items font">
-                    Home
-                </button>
-                <button type="button" onclick="location.href = '/about';" class="middle_items font">
-                    About
-                </button>
-                <button type="button" onclick="location.href = '/admin';" class="middle_items font">
-                    Admin
-                </button>
-                <button type="button" onclick="location.href = '/all-items';" class="middle_items font">
-                    All Items
-                </button>
-            </div>
-            <div class="menu_container small_screen">
-                <div class="menu_dropdown">
-                    <p onclick="location.href = '/all-items';">All Items</p>
-                    <p onclick="location.href = '/about';">About</p>
-                    <p onclick="location.href = '/';">Home</p>
-                </div>
-                <div class="menu_icon" onclick="openMenu(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
-                <script>
-                    function openMenu(x) {
-                        x.classList.toggle("change");
-                        document.getElementsByClassName("menu_dropdown")[0].classList.toggle("change");
-                    }
-                </script>
-            </div>
-            <input type="Search" placeholder="Search" class="font search_bar" />
-            <!-- Sets up functionality for searchbar -->
-            <script src="/javascript/setup_search.js"></script>
-        </nav>
