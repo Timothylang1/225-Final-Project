@@ -153,58 +153,58 @@ color: #01426A;
 
 @media only screen and (max-width: 600px) {
     .theimage {
-      height: 300px;
-      width: 250px;
+      width: 60%;
+      height: 100%;
       left: 40px;
-      top: 50px;
+      top: 30px;
     }
     .item-name{
         font-size: 15px;
         line-height: 15px;
         left: 20px;
-        top:40px;
+        top:20px;
     }
     .individual-name{
         font-size: 10px;
         line-height: 15px;
         left: 20px;
-        top: 445px;
+        top: 350px;
     }
     .Description{
         font-size: 15px;
         line-height: 15px;
         left: 20px;
-        top: 465px;
+        top: 380px;
     }
     .details-description{
         font-size: 10px;
         line-height: 15px;
         left: 20px;
-        top: 485px;
+        top: 410px;
     }
     .item-type{
         font-size: 15px;
         line-height: 15px;
         left: 20px;
-        top: 515px;
+        top: 435px;
     }
     .type-name{
         font-size: 10px;
         line-height: 15px;
         left: 20px;
-        top: 540px;
+        top: 470px;
     }
     .date-title{
-        font-size: 10px;
+        font-size: 15px;
         line-height: 15px;
         left: 20px;
-        top: 560px;
+        top: 500px;
     }
     .date-time{
         font-size: 10px;
         line-height: 15px;
         left: 20px;
-        top: 580px;
+        top: 550px;
     }
     
 
