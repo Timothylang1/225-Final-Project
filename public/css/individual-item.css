@@ -1,212 +1,51 @@
-.theimage{
-    position: relative;
-    top: 110px;
-    left: 230px;
-    width: 380px;
-    height: 350px;
-    border: none;
+.individual_item_container {
+    display: flex;
+    padding-top: 30px;
 }
 
-.item-name{
-position: relative;
-width: 80px;
-height: 17px;
-left: 800px;
-bottom: 310px;
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-letter-spacing: 0.1em;
-color: #01426A;
-opacity: 0.56;
-}
-
-.individual-name{
-position: absolute;
-width: 350px;
-height: 38px;
-left: 800px;
-top: 150px;
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 700;
-line-height: 34px; 
-/* identical to box height */
-/* letter-spacing: 0.05em; */
-color: #01426A;
-flex: 0 0 60%;
-}
-
-.Description{
-position: absolute;
-/* width: 85px;
-height: 17px; */
-left: 800px;
-top: 230px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-flex: 0 0 50%;
-/* identical to box height */
-
-letter-spacing: 0.1em;
-
-color: #01426A;
-opacity: 0.56
-}
-
-.details-description{
-    position: absolute;
-    /* width: 400px;
-    height: 40px; */
-    left: 800px;
-    top: 270px;
-    font-family: 'Barlow';
-    font-style: normal;
-    /* font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.1em; */
-    color: #01426A;
+.individual_item_container > .image_container {
     flex: 0 0 50%;
+    align-items: center;
+    text-align: center;
 }
 
-.item-type{
-                            
-position: absolute;    
-width: 34px;
-height: 17px;
-left: 800px;
-top: 350px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
-
-letter-spacing: 0.1em;
-
-color: #01426A;
-
-opacity: 0.56;
-
-}
-.type-name{
-    position: absolute;
-    width: 50px;
-    height: 19px;
-    left: 800px;
-    top: 370px;
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.1em;
-    color: #01426A;
-}
-.date-title{
-    position: absolute;
-    width: 81px;
-    height: 17px;
-    left: 1031px;
-    top: 350px;
-
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-    letter-spacing: 0.1em;
-
-    color: #01426A;
-
-    opacity: 0.56;
+.individual_item_container > .image_container > img {
+    width: 75%;
 }
 
-.date-time{
-position: absolute;
-width: 101px;
-height: 19px;
-left: 1031px;
-top: 370px;
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-letter-spacing: 0.1em;
-
-color: #01426A;
+.right_side {
+    padding: 0px 10px;
 }
+
+.label {
+    font-size: 23px;
+    margin: 0px;
+}
+
+.text_description {
+    font-size: 18px;
+    margin: 10px 0px;
+}
+
+
+
 
 @media only screen and (max-width: 600px) {
-    .theimage {
-      height: 300px;
-      width: 250px;
-      left: 40px;
-      top: 50px;
+    .individual_item_container {
+        flex-direction: column;
     }
-    .item-name{
-        font-size: 15px;
-        line-height: 15px;
-        left: 20px;
-        top:40px;
-    }
-    .individual-name{
-        font-size: 10px;
-        line-height: 15px;
-        left: 20px;
-        top: 445px;
-    }
-    .Description{
-        font-size: 15px;
-        line-height: 15px;
-        left: 20px;
-        top: 465px;
-    }
-    .details-description{
-        font-size: 10px;
-        line-height: 15px;
-        left: 20px;
-        top: 485px;
-    }
-    .item-type{
-        font-size: 15px;
-        line-height: 15px;
-        left: 20px;
-        top: 515px;
-    }
-    .type-name{
-        font-size: 10px;
-        line-height: 15px;
-        left: 20px;
-        top: 540px;
-    }
-    .date-title{
-        font-size: 10px;
-        line-height: 15px;
-        left: 20px;
-        top: 560px;
-    }
-    .date-time{
-        font-size: 10px;
-        line-height: 15px;
-        left: 20px;
-        top: 580px;
-    }
-    
 
+    .image_container > img {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .label {
+        font-size: 19px;
+    }
+
+    .text_description {
+        font-size: 17px;
+    }
 
 }
