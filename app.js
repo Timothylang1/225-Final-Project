@@ -103,16 +103,14 @@ let upload = multer({ storage: storage });
 // Routing 🐍
 app
   .route("/")
-  .get((req, res) => {
-    imgModel.find({}, null, { limit: 12 }, (err, items) => {
-      if (err) {
-        console.log(err);
-        res.status(500).send("An error occurred", err);
-      } else {
-        items.sort((item) => item.date).reverse();
-        res.render("home", { items });
-      }
-    });
+  .get(async (req, res) => {
+    try {
+      const items = await imgModel.find({});
+      items.sort((item) => item.date).reverse();
+      res.render("home", { items });
+    } catch (err) {
+      res.status(500).send("An error occurred", err);
+    }
   })
   .post((req, res) => {
     res.render("home");
@@ -151,18 +149,17 @@ app.route("/logout").get((req, res, next) => {
   });
 });
 
-app.route("/admin").get((req, res) => {
-  if (req.isAuthenticated()) {
-    imgModel.find({}, (err, items) => {
-      if (err) {
-        console.log(err);
-        res.status(500).send("An error occurred", err);
-      } else {
-        res.render("admin", { items });
-      }
-    });
-  } else {
+app.route("/admin").get(async (req, res) => {
+  if (!req.isAuthenticated()) {
     res.redirect("/login");
+  }
+
+  try {
+    const items = await imgModel.find({});
+    res.render("admin", { items });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("An error occurred", err);
   }
 });
 
