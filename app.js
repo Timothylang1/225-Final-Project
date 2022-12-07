@@ -133,16 +133,11 @@ app
       password: req.body.password,
     });
     req.login(user, (err) => {
-      if (err) {
+      if (!err) {
+        logUserIn(req, res);
+      } else {
         console.log(err);
         res.redirect("/login");
-      } else {
-        passport.authenticate("local", {
-          failureRedirect: "/login",
-          failureMessage: true,
-        })(req, res, () => {
-          res.redirect("/admin");
-        });
       }
     });
   });
@@ -249,23 +244,7 @@ app
       if (err) {
         console.log("error in post edit form");
       } else {
-        let update = {
-          name: trimAndCapitalizeFirstLetter(req.body.name),
-          desc: trimAndCapitalizeFirstLetter(req.body.desc),
-          type: req.body.type,
-        };
-        imgModel.findByIdAndUpdate(
-          { _id: id },
-          update,
-          { multi: true, new: true },
-          (err) => {
-            if (err) {
-              console.log(err);
-            } else {
-              console.log("updated item");
-            }
-          }
-        );
+        updateDocument(req, id);
         res.redirect("/admin");
       }
     });
@@ -278,6 +257,35 @@ app.listen(process.env.PORT || 3000, function () {
     app.settings.env
   );
 });
+
+function updateDocument(req, id) {
+  let update = {
+    name: trimAndCapitalizeFirstLetter(req.body.name),
+    desc: trimAndCapitalizeFirstLetter(req.body.desc),
+    type: req.body.type,
+  };
+  imgModel.findByIdAndUpdate(
+    { _id: id },
+    update,
+    { multi: true, new: true },
+    (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("updated item");
+      }
+    }
+  );
+}
+
+function logUserIn(req, res) {
+  passport.authenticate("local", {
+    failureRedirect: "/login",
+    failureMessage: true,
+  })(req, res, () => {
+    res.redirect("/admin");
+  });
+}
 
 function trimAndCapitalizeFirstLetter(text) {
   text = text.trim();
