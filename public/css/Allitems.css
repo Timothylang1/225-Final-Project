@@ -84,7 +84,6 @@
   max-width: 300px;
   margin: auto;
   text-align: center;
-  margin-top: 50px;  
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -117,8 +116,7 @@
 
 .single_item > .single_item-img {
  
-  width: 300px;
-  height: 220px;
+  width: 100%;
  
 }  
 
@@ -148,7 +146,6 @@
     max-width: 270px;
     margin: auto;
     text-align: center;
-    margin-top: 40px;  
     padding: 30px;
     display: flex;
     flex-direction: column;

@@ -1,46 +1,25 @@
 <%- include('partials/navbar') %>
 
 <link rel="stylesheet" href="/css/individual-item.css">
-<div style="display: flex; flex-wrap: wrap; padding: 4px;">
-<div style="flex: 1 0 10%" >
-
-    <body>
-        
-        <imgg>
+<div class="individual_item_container">
+    <div class="image_container">
         <img class = "theimage" src="data:image/<%=item[0].img.contentType%>;base64,
-    <%=item[0].img.data.toString('base64')%>" alt="" height="400">
-    </imgg>
-
-
-<item-name>
-    <p class = "item-name">Item Name</p>
-</item-name>
-
-<individual-name>
-    <p class = "individual-name"><%= item[0].name %></p> 
-</individual-name>
-
-<Description><p class = "Description">Description</p> </Description>
- 
-<details-description> 
-    <p class = "details-description"><%= item[0].desc %></p> 
- </details-description>
-
-<item-type><p class = "item-type">Type</p></item-type>
-
-<type-name>
-    <p class = "type-name"><%= item[0].type %></p>
-</type-name>               
-
-<date-title> <p class = "date-title">Date Added</p> </date-title>
-                            
-<date-time> <p class = "date-time"><%= item[0].date %></p></date-time>           
-
-       
-</p>
-</div> 
+        <%=item[0].img.data.toString('base64')%>" alt="">
+    </div>
+    <div class="right_side">
+        <b><p class = "item-name label">Item Name:</p></b>
+        <p class = "individual-name text_description"><%= item[0].name %></p> 
+    
+        <b><p class = "Description label">Description:</p></b>
+        <p class = "details-description text_description"><%= item[0].desc %></p> 
+    
+        <b><p class = "item-type label">Type:</p></b>
+        <p class = "type-name text_description"><%= item[0].type %></p>
+    
+        <b><p class = "date-title label">Date Added:</p></b>
+        <p class = "date-time text_description"><%= item[0].date.toDateString().substring(4);%></p>     
+    </div>
 </div>
  
-    </body>
-
-    </html>
+</body>
+</html>
