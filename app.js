@@ -105,7 +105,7 @@ app
   .route("/")
   .get(async (req, res) => {
     try {
-      const items = await imgModel.find({});
+      const items = await imgModel.find({}, null, { limit: 12 });
       items.sort((item) => item.date).reverse();
       res.render("home", { items });
     } catch (err) {
@@ -164,26 +164,24 @@ app.route("/admin").get(async (req, res) => {
 });
 
 app.route("/all-items").get(async (req, res) => {
-  imgModel.find({}, (err, items) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("An error occurred", err);
-    } else {
-      res.render("all-items", { items });
-    }
-  });
+  try {
+    const items = await imgModel.find({});
+    res.render("all-items", { items });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("An error occurred", err);
+  }
 });
 
-app.route("/single-item/:id").get((req, res) => {
+app.route("/single-item/:id").get(async (req, res) => {
   const id = req.params.id;
-  imgModel.find({ _id: id }, (err, item) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("An error occurred", err);
-    } else {
-      res.render("individual-item", { item });
-    }
-  });
+  try {
+    const item = await imgModel.find({ _id: id });
+    res.render("individual-item", { item });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("An error occurred", err);
+  }
 });
 
 app.route("/admin-newitem").get((req, res) => {
@@ -201,6 +199,7 @@ app.post("/upload-image", upload.single("image"), (req, res, next) => {
     type: req.body.type,
     img: {
       data: fs.readFileSync(
+        // adds file to local app storage
         path.join(__dirname + "/uploads/" + req.file.filename)
       ),
       contentType: "image/png",
@@ -211,7 +210,7 @@ app.post("/upload-image", upload.single("image"), (req, res, next) => {
     if (err) {
       res.render("admin-newitem", { err });
     } else {
-      fs.unlinkSync(path.join(__dirname + "/uploads/" + req.file.filename)); // Removes image from local drive
+      fs.unlinkSync(path.join(__dirname + "/uploads/" + req.file.filename)); // Removes image from local app storage
       res.render("admin-newitem", { obj });
     }
   });
