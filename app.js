@@ -14,6 +14,7 @@ let multer = require("multer");
 const { deserializeUser } = require("passport");
 const { type } = require("os");
 const compression = require("compression");
+const DBpassword = require("./passwords.js");
 
 app.use(express.static(__dirname + "/public"));
 app.set("views", __dirname + "/public/views");
@@ -42,7 +43,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect(
-  "mongodb+srv://freeswapadmin:cafemacisgreat@freeswap.nx7crsb.mongodb.net/?retryWrites=true&w=majority",
+  `mongodb+srv://freeswapadmin:${DBpassword.DBpassword}@freeswap.nx7crsb.mongodb.net/?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -105,7 +106,7 @@ app
   .route("/")
   .get(async (req, res) => {
     try {
-      const items = await imgModel.find({}, null, { limit: 12 });
+      const items = await imgModel.find({}, null, { limit: 12 }).lean();
       items.sort((item) => item.date).reverse();
       res.render("home", { items });
     } catch (err) {
@@ -165,7 +166,7 @@ app.route("/admin").get(async (req, res) => {
 
 app.route("/all-items").get(async (req, res) => {
   try {
-    const items = await imgModel.find({});
+    const items = await imgModel.find({}).lean();
     res.render("all-items", { items });
   } catch (err) {
     console.log(err);
