@@ -14,7 +14,7 @@ let multer = require("multer");
 const { deserializeUser } = require("passport");
 const { type } = require("os");
 const compression = require("compression");
-const DBpassword = require("./passwords.js");
+const config = require("./config.js");
 
 app.use(express.static(__dirname + "/public"));
 app.set("views", __dirname + "/public/views");
@@ -33,7 +33,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(
   session({
-    secret: "change this",
+    secret: config.sessionsPassword,
     resave: false,
     saveUninitialized: false,
   })
@@ -42,13 +42,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(
-  `mongodb+srv://freeswapadmin:${DBpassword.DBpassword}@freeswap.nx7crsb.mongodb.net/?retryWrites=true&w=majority`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(config.mongoDBURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // Chooses which DB tp save to
 const DB = mongoose.connection.useDb("freeswap");
