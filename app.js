@@ -103,8 +103,9 @@ app
   .route("/")
   .get(async (req, res) => {
     try {
-      const items = await imgModel.find({}, null, { limit: 12 }).lean();
-      items.sort((item) => item.date).reverse();
+      const homeItems = await imgModel.find({}, null).lean();
+      homeItems.sort((item) => item.date).reverse();
+      items = homeItems.slice(0, 12);
       res.render("home", { items });
     } catch (err) {
       res.status(500).send("An error occurred", err);
