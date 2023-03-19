@@ -7,7 +7,7 @@
 This is the source code for the Macalester College free swap program which is run by the sustainability office. Free swap allows students to donate items and or collect donated items such as clothes and housegold items from a private storage location.
 
 ## Purpose
-Increasing the effeciency of the free swap program by making it more accessible.
+Increasing the efficiency of the free swap program by making it more accessible.
 
 ## Tech Stack
 - Node.JS
